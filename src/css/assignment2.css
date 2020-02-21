@@ -1,7 +1,7 @@
 /**
-  Author: Callum-James Smith (1806094)
-  Date Created: 20-11-2019
-  Last Updated: 04-12-2019
+  Author: Callum-James Smith (Sudo-Make)
+  Date Created: 21-02-2020
+  Last Updated: 21-02-2020
 */
 .icon-dark {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(32, 32, 32, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
@@ -29,7 +29,8 @@
   background-color: transparent; }
 
 .fa {
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  color: #e9e9e9; }
 
 .fa:hover {
   transition: ease-in 0.3s;
@@ -46,14 +47,18 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
 
 .navigation-links:hover {
-  border-bottom: 2px solid rgba(55, 61, 63, 0.4); }
+  border-bottom: 2px solid #e9e9e9; }
+
+.navbar-nav .active {
+  color: #e9e9e9;
+  border-bottom: 2px solid #e9e9e9 !important; }
 
 .nav-tabs, .card-header {
   background: white; }
 
 .nav-link {
   background: none;
-  color: #181818 !important;
+  color: #e9e9e9 !important;
   border-radius: 0px; }
 
 .card-about {
@@ -63,9 +68,7 @@
 
 #demo-canvas {
   position: fixed;
-  background-image: url(../images/index_bg.jpg);
-  background-position: center;
-  background-size: cover;
+  background-color: #1c1f27;
   top: 0;
   left: 0; }
 
@@ -73,11 +76,7 @@
   background: transparent;
   background-size: cover;
   background-position: center;
-  color: #181818; }
-
-.navbar-nav .active {
-  color: #181818;
-  border-bottom: 2px solid #181818; }
+  color: #e9e9e9; }
 
 .jumbotron {
   height: auto;
@@ -90,6 +89,13 @@
   margin: 0 auto;
   display: block;
   margin-top: 20px; }
+
+#terminal-input {
+  background: black;
+  color: #e9e9e9;
+  border: none;
+  width: auto;
+  height: 100px; }
 
 .modal {
   background: rgba(17, 17, 17, 0.253);
@@ -106,6 +112,14 @@
   transition: opacity 300ms ease-in-out 1ms,visibility 1ms linear 302ms;
   width: 100%;
   opacity: 1; }
+
+.close {
+  color: #e9e9e9;
+  background-color: #252525;
+  border: none; }
+
+.close:hover {
+  color: white; }
 
 .modal-dialog-scrollable {
   background: rgba(17, 17, 17, 0.253);
@@ -125,7 +139,26 @@
     height: 100vh; } }
 
 .modal-content {
-  border-radius: 0; }
+  border-radius: 0;
+  background-color: #111111;
+  color: #e9e9e9; }
+
+.card {
+  border-radius: 0;
+  background-color: #111111;
+  color: #e9e9e9 !important; }
+
+.nav-tabs, .card-header, .card-header-tabs > .nav-item {
+  border-radius: 0;
+  background-color: #111111;
+  color: #e9e9e9 !important; }
+
+.card-header-tabs > .nav-item .active {
+  background-color: #252525;
+  color: #e9e9e9 !important; }
+
+.text-body {
+  color: #e9e9e9 !important; }
 
 ul.timeline {
   list-style-type: none;

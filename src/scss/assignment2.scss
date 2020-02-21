@@ -1,13 +1,13 @@
 /**
-  Author: Callum-James Smith (1806094)
-  Date Created: 20-11-2019
-  Last Updated: 04-12-2019
+  Author: Callum-James Smith (Sudo-Make)
+  Date Created: 21-02-2020
+  Last Updated: 21-02-2020
 */
-
-$primary-color: rgb(233, 233, 233);;
-$nav-bg-color: rgb(37, 37, 37);
-$primary-txt-color: rgb(233, 233, 233);
-$alt-txt-color: rgb(24, 24, 24);
+$index-bg-color: rgb(28, 31, 39);
+$primary-color: rgb(17, 17, 17); // The colour of most elements
+$nav-bg-color: rgb(37, 37, 37); // Navigation background colour when made sticky
+$primary-txt-color: rgb(233, 233, 233); // Text colour for *most* text
+$alt-txt-color: rgb(24, 24, 24); // Alt text colour (for things like modals etc.
 $hover-color: #007bff;
 // Image obtained from: https://www.pexels.com
 $hero-bg-image: url(../images/index_bg.jpg);
@@ -55,6 +55,7 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
 
 .fa {
     font-size: 1.2em;
+    color: $primary-txt-color;
 }
 
 .fa:hover {
@@ -75,7 +76,12 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
 }
 
 .navigation-links:hover {
-    border-bottom: 2px solid rgba(55, 61, 63, 0.4);
+    border-bottom: 2px solid $primary-txt-color;
+}
+
+.navbar-nav .active{
+    color: $primary-txt-color;
+    border-bottom: 2px solid $primary-txt-color !important;
 }
 
 .nav-tabs, .card-header {
@@ -84,7 +90,7 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
 
 .nav-link {
     background: none;
-    color: $alt-txt-color !important;
+    color: $primary-txt-color !important;
     border-radius: 0px;
 }
 
@@ -97,9 +103,7 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
 // Home page
 #demo-canvas {
     position: fixed;
-    background-image: $hero-bg-image;
-    background-position: center;
-    background-size: cover;
+    background-color: $index-bg-color;
     top: 0;
     left: 0;
 }
@@ -108,12 +112,7 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
     background: transparent;
     background-size: cover;
     background-position: center;
-    color: $alt-txt-color;
-}
-
-.navbar-nav .active{
-    color: $alt-txt-color;
-    border-bottom: 2px solid $alt-txt-color;
+    color: $primary-txt-color;
 }
 
 .jumbotron {
@@ -128,6 +127,14 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
     margin: 0 auto;
     display: block;
     margin-top: 20px;
+}
+
+#terminal-input {
+    background: black;
+    color: $primary-txt-color;
+    border: none;
+    width: auto;
+    height: 100px;
 }
 
 // About modal
@@ -146,6 +153,16 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
     transition: opacity 300ms ease-in-out 1ms,visibility 1ms linear 302ms;
     width: 100%;
     opacity: 1;
+}
+
+.close {
+    color: set-text-color($nav-bg-color);
+    background-color: $nav-bg-color;
+    border: none;
+}
+
+.close:hover {
+    color: white;
 }
 
 .modal-dialog-scrollable {
@@ -169,7 +186,31 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
 
 .modal-content {
     border-radius: 0;
+    background-color: $primary-color;
+    color: set-text-color($primary-color);
 }
+
+.card {
+    border-radius: 0;
+    background-color: $primary-color;
+    color: set-text-color($primary-color) !important;
+}
+
+.nav-tabs, .card-header, .card-header-tabs > .nav-item {
+    border-radius: 0;
+    background-color: $primary-color;
+    color: set-text-color($primary-color) !important;
+}
+
+.card-header-tabs > .nav-item .active {
+    background-color: $nav-bg-color;
+    color: set-text-color($nav-bg-color) !important;
+}
+
+.text-body {
+    color: set-text-color($nav-bg-color) !important;
+}
+
 // Timeline feature of the employment tab
 ul.timeline {
     list-style-type: none;
