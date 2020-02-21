@@ -1,0 +1,217 @@
+/**
+  Author: Callum-James Smith (1806094)
+  Date Created: 20-11-2019
+  Last Updated: 04-12-2019
+*/
+.icon-dark {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(32, 32, 32, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+
+.bg-primary {
+  background-color: transparent !important; }
+
+.btn-dark {
+  border: 1px #25292b solid;
+  background: transparent;
+  color: #25292b; }
+
+.btn-link {
+  color: #44449c; }
+
+.btn-social {
+  padding: auto;
+  width: 60px;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  font-size: 1.4em; }
+
+.btn-social:hover {
+  background-color: transparent; }
+
+.fa {
+  font-size: 1.2em; }
+
+.fa:hover {
+  transition: ease-in 0.3s;
+  color: #007bff; }
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+  height: 100vh; }
+
+.navigation-links {
+  margin-right: 50px;
+  padding: 8px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+
+.navigation-links:hover {
+  border-bottom: 2px solid rgba(55, 61, 63, 0.4); }
+
+.nav-tabs, .card-header {
+  background: white; }
+
+.nav-link {
+  background: none;
+  color: #25292b !important;
+  border-radius: 0px; }
+
+.card-about {
+  height: auto;
+  border: none !important;
+  box-shadow: none !important; }
+
+.home-page {
+  background: transparent;
+  background-image: url(../images/home-bg-image.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #25292b; }
+
+.navbar-nav .active {
+  color: #25292b;
+  border-bottom: 2px solid #25292b; }
+
+.jumbotron {
+  height: auto;
+  background-color: transparent;
+  text-align: center;
+  margin: 0 auto; }
+
+.jumbo-info {
+  width: fit-content;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px; }
+
+.modal {
+  background: rgba(17, 17, 17, 0.253);
+  cursor: crosshair;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: opacity 300ms ease-in-out 1ms,visibility 1ms linear 302ms;
+  transition: opacity 300ms ease-in-out 1ms,visibility 1ms linear 302ms;
+  width: 100%;
+  opacity: 1; }
+
+.modal-dialog-scrollable {
+  background: rgba(17, 17, 17, 0.253);
+  cursor: default;
+  float: right;
+  max-width: 650px;
+  min-height: 94vh;
+  margin-right: 8px;
+  opacity: 1;
+  -webkit-transition: opacity 400ms ease-in-out;
+  transition: opacity 400ms ease-in-out;
+  width: 100%; }
+
+@media (max-width: 650px) {
+  .modal-dialog-scrollable {
+    margin: 0;
+    height: 100vh; } }
+
+.modal-content {
+  border-radius: 0; }
+
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+  text-align: left; }
+
+ul.timeline:before {
+  content: ' ';
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400; }
+
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px; }
+
+ul.timeline > li:before {
+  content: ' ';
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #373d3f;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400; }
+
+.posts-page {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto; }
+
+.bg-white > a,
+.navbar-nav > li > a {
+  color: #25292b; }
+
+.card {
+  max-width: 1000px;
+  width: 100%;
+  color: #25292b;
+  margin: 0 auto;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+
+.yoga-page {
+  background: url(../images/yoga-bg-image.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; }
+
+.yoga-about {
+  height: 35vh;
+  text-align: left;
+  margin: 0 auto;
+  display: table;
+  width: 75%; }
+
+.about-card {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  vertical-align: middle;
+  display: table-cell;
+  width: 100%; }
+
+.yoga-teaching {
+  height: 35vh;
+  text-align: center;
+  border: none;
+  box-shadow: none; }
+
+.teaching-card {
+  margin: 0 auto;
+  display: block;
+  border: none;
+  box-shadow: none; }
+
+.img-round {
+  border-radius: 180px;
+  width: 180px; }
+
+@media (max-width: 1038px) {
+  .home-page {
+    background: white; }
+  .home-featured {
+    margin: 0 auto !important;
+    display: block;
+    float: none !important; }
+  .yoga-page {
+    height: auto; } }

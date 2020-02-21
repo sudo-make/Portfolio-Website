@@ -1,0 +1,30 @@
+{
+  "name": "hci-assignment-2",
+  "version": "1.0.0",
+  "description": "A website created as part of HCI module; using bootstrap, gulp and sass.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/techdragongames/hci-assignment-2.git"
+  },
+  "keywords": [
+    "HCI",
+    "website"
+  ],
+  "author": "Callum-James Smith (1806094)",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/techdragongames/hci-assignment-2#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0"
+  }
+}
