@@ -95,9 +95,15 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
 }
 
 // Home page
+#demo-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 .home-page {
     background: transparent;
-    background-image: $hero-bg-image;
+    // background-image: $hero-bg-image;
     background-size: cover;
     background-position: center;
     color: $alt-txt-color;

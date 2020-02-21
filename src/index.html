@@ -7,13 +7,15 @@
 <html class="no-js" lang="en">
 
 <head>
-  <title>Arene Au | Home</title>
+  <title>$ ls HOME | sudo-make</title>
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <!-- Obtained from https://www.jqueryscript.net/menu/Highlight-Nav-Bootstrap-jQuery-Dynamic-Menu.html -->
   <script src="js/dynamic-menu.js"></script>
 
+  <!-- Cool effect -->
+  
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
   <!-- Below is the API for Fontawesome, this provides some icons that allow for quicker load times and better responsiveness -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -26,7 +28,6 @@
 <body>
   <!-- Navigation bar/header -->
   <div class="container-fluid home-page">
-
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
       <!-- Start of navigation -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -45,10 +46,7 @@
             <a href="#" class="nav-link" data-toggle="modal" data-target="#contactModal">Contact</a>
           </li>
           <li class="nav-item navigation-links">
-            <a href="posts.html" class="nav-link">Posts</a>
-          </li>
-          <li class="nav-item navigation-links">
-            <a href="yoga.html" class="nav-link">Yoga</a>
+            <a href="posts.html" class="nav-link">Projects</a>
           </li>
         </ul>
       </div>
@@ -57,35 +55,24 @@
       </script>
     </nav> <!-- End of navigation -->
 
-    <div class="jumbotron">
+    <canvas id="demo-canvas"></canvas>
+    <div class="jumbotron demo">
       <div class="jumbo-info">
-        <h1 class="display-4">Irene Au</h1>
-        <p class="lead">Yoga teacher, author, speaker.</p>
+        <h1 class="display-4">Callum-James Smith</h1>
+        <p class="lead">Student, Game dev, Linux Fanatic.</p>
         <div class="btn-group" role="group" aria-label="Social media links">
           <button type="button" class="btn btn-light btn-social">
-            <a class="text-dark" href="https://www.linkedin.com/in/ireneau/" aria-label="External link to linkedin"><i class="fa fa-linkedin"
+            <a class="text-dark" href="https://www.linkedin.com/in/callum-james-smith/" aria-label="External link to my LinkedIn"><i class="fa fa-linkedin"
                 aria-hidden="true"></i></a>
           </button>
           <button type="button" class="btn btn-light btn-social">
-            <a class="text-dark" href="https://twitter.com/ireneau/" aria-label="External link to twitter"><i class="fa fa-twitter"
-                aria-hidden="true"></i></a>
-          </button>
-          <button type="button" class="btn btn-light btn-social">
-            <a class="text-dark" href="https://www.facebook.com/irene.au/" aria-label="External link to Facebook"><i class="fa fa-facebook"
-                aria-hidden="true"></i></a>
-          </button>
-          <button type="button" class="btn btn-light btn-social">
-            <a class="text-dark" href="https://www.instagram.com/au_irene/" aria-label="External link to Instagram"><i class="fa fa-instagram"
-                aria-hidden="true"></i></a>
-          </button>
-          <button type="button" class="btn btn-light btn-social">
-            <a class="text-dark" href="https://www.pinterest.com/ireneau/" aria-label="External link to Pinterest"><i class="fa fa-pinterest"
+            <a class="text-dark" href="https://github.com/sudo-make" aria-label="External link to my GitHub page"><i class="fa fa-github"
                 aria-hidden="true"></i></a>
           </button>
         </div>
       </div>
     </div>
-
+    
     <div class="card mb-3 home-featured" style="max-width: 500px; float: right; margin: 8px; width: auto;">
       <div class="row no-gutters">
         <div class="col-md-8">
@@ -99,7 +86,6 @@
       </div>
     </div>
   </div> <!-- End of page container-->
-
   <!-- About Modal -->
   <div class="modal fade" id="aboutModal" tabindex="0" role="dialog" aria-labelledby="aboutModalTitle"
     aria-hidden="true">
@@ -247,6 +233,9 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script> <!-- Bootstrap Javascript stuff, animations etc. -->
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+  <script src="js/effect.js"></script>
 </body>
 
 </html>

@@ -61,9 +61,13 @@
   border: none !important;
   box-shadow: none !important; }
 
+#demo-canvas {
+  position: fixed;
+  top: 0;
+  left: 0; }
+
 .home-page {
   background: transparent;
-  background-image: url(../images/home-bg-image.jpg);
   background-size: cover;
   background-position: center;
   color: #25292b; }
