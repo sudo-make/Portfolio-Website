@@ -4,13 +4,13 @@
   Last Updated: 04-12-2019
 */
 
-$primary-color: rgba(44, 44, 44, 0.8);
+$primary-color: rgb(233, 233, 233);;
 $nav-bg-color: rgb(37, 37, 37);
 $primary-txt-color: rgb(233, 233, 233);
-$alt-txt-color: rgb(37, 41, 43);
+$alt-txt-color: rgb(24, 24, 24);
 $hover-color: #007bff;
 // Image obtained from: https://www.pexels.com
-$hero-bg-image: url(../images/home-bg-image.jpg);
+$hero-bg-image: url(../images/index_bg.jpg);
 $yoga-bg-image: url(../images/yoga-bg-image.jpg);
 
 // Set text color
@@ -97,13 +97,15 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
 // Home page
 #demo-canvas {
     position: fixed;
+    background-image: $hero-bg-image;
+    background-position: center;
+    background-size: cover;
     top: 0;
     left: 0;
 }
 
 .home-page {
     background: transparent;
-    // background-image: $hero-bg-image;
     background-size: cover;
     background-position: center;
     color: $alt-txt-color;
