@@ -13,6 +13,7 @@
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <!-- Obtained from https://www.jqueryscript.net/menu/Highlight-Nav-Bootstrap-jQuery-Dynamic-Menu.html -->
   <script src="js/dynamic-menu.js"></script>
+  <script src="js/terminal.js"></script>
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
   <!-- Below is the API for Fontawesome, this provides some icons that allow for quicker load times and better responsiveness -->
@@ -59,7 +60,7 @@
     <div class="terminal-input-container text-monospace text-muted screen">
       <p class="text-light text-monospace"> > ./run-setup.sh </p>
 
-      <div class="terminal-output">
+      <div id="terminal-output" class="terminal-output">
         <h1 class="text-monospace text-muted">
         <span style="color: red;">W</span> <span style="color: orange;">e</span> <span style="color: yellow;">l</span> <span style="color: green;">c</span> <span style="color: blue;">o</span> <span style="color: indigo;">m</span> <span style="color: violet;">e</span> <span>!</span>......
         </h1>
@@ -74,7 +75,7 @@
         <br>
         <p class="text-muted">please enter a command to continue: e.g. <a href="#" class="text-muted" data-toggle="modal" data-target="#aboutModal">./about.sh</a> | <a href="#" class="text-muted" data-toggle="modal" data-target="#contactModal">./contact.sh</a> | <a href="posts.html" class="text-muted">ls projects</a></p>
       </div>
-      <label class="text-light text-monospace" for="terminal-input">visitor@home: ~$ <input class="text-monospace" type="text" name="terminal-input" id="terminal-input" autofocus>
+      <label id="input-label" class="text-light text-monospace" for="terminal-input">visitor@home: ~$ <input class="text-monospace" value="" type="text" name="terminal-input" id="terminal-input" autofocus> <button style="display: none;"></button>
     </div>
   </div> <!-- End of page container-->
 
@@ -111,62 +112,77 @@
                     aria-controls="general" aria-selected="true">General</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="speaking-schedule-tab" data-toggle="tab" href="#speaking-schedule" role="tab"
-                    aria-controls="speaking-schedule" aria-selected="false">Speaking Schedule</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" id="achievements-tab" data-toggle="tab" href="#achievements" role="tab"
                     aria-controls="achievements" aria-selected="false">Achievements</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="employment-tab" data-toggle="tab" href="#employment" role="tab"
-                    aria-controls="employment" aria-selected="false">Employment</a>
+                  <a class="nav-link" id="experience-tab" data-toggle="tab" href="#experience" role="tab"
+                    aria-controls="experience" aria-selected="false">Experience</a>
                 </li>
               </ul>
             </div>
             <!-- The card bodies, these are shown when user clicks on corresponding tab -->
             <div class="card-body">
-              <div class="tab-content" id="myTabContent">
+              <div class="tab-content text-monospace" id="myTabContent">
                 <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
                   My name is Callum-James Smith; I am a 2nd year student at the university of essex; studying computer science.
                   <br>
                   <br> I make <i class="fa fa-gamepad" aria-hidden="true"></i> games, create websites, and mess around with <i class="fa fa-linux" aria-hidden="true"></i> Linux.
-                </div>
-                <div class="tab-pane fade" id="speaking-schedule" role="tabpanel"
-                  aria-labelledby="speaking-schedule-tab">
-                  <p class="small font-italic">No upcoming events</p>
+                  <br><br>
+                  <p class="text-left small font-italic" >* I also like dragons</p>
+                  <pre class="text-light">
+                    \`-\`-._
+                    \` )`. `-.__      ,
+ '' , . _       _,-._;'_,-`__,-'    ,/
+: `. ` , _' :- '--'._ ' `------._,-;'
+ `- ,`- '            `--..__,,---'
+                  </pre>
                 </div>
                 <div class="tab-pane fade achievements-tab" id="achievements" role="tabpanel" aria-labelledby="achievements-tab">
                   <p class="font-weight-bold">Carolina Scholars Award</p>
                   <p class="text-body font-weight-normal">University of South Carolina
                   Full scholarship to the University of South Carolina Honors College
                   Full scholarship to the University of South Carolina Honors College</p>
-
                   <p class="font-weight-bold">Palmetto Fellows Award</p>
                   <p class="text-body font-weight-normal">State of South Carolina
                   Full scholarship to attend any state university in South Carolina
                   Full scholarship to attend any state university in South Carolina</p>
                 </div>
-                  <div class="tab-pane fade" id="employment" role="tabpanel" aria-labelledby="employment-tab">
+                  <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
                     <div class="container-fluid mt-5 mb-5">
                       <div class="row">
                         <div class="col-md-10 offset-md-1">
                           <ul class="timeline">
                             <li>
-                              <p>Advisory Board Member</p>
-                              <p>GROUP OF HUMANS</p>
-                              <p>Aug 2019 - Present</p>
+                              <p>Student</p>
+                              <p>University of Essex</p>
+                              <p>Oct 2018 - Present</p>
+                              <p><strong>Modules include:</strong></p>
+                                <ul>
+                                  <li>Team Project</li>
+                                  <li>Introduction to programming (Python)</li>
+                                  <li>Mathematics for computing</li>
+                                  <li>Object-oriented programming (Java)</li>
+                                  <li>C++ Programming</li>
+                                  <li>Games Programming</li>
+                                </ul>
+                              <p><strong>Certifications:</strong> Cisco Certified Network Associate (CCNA).</p>
+                              
                             </li>
+                            <br>
                             <li>
-                              <p>Yoga Teacher</p>
-                              <p>Avalon Yoga International</p>
-                              <p>Feb 2012 - Present</p>
-                            </li>
-                            <li>
-                              <p>Strategic and Editorial Board Member</p>
-                              <p>Rosenfeld Media</p>
-                              <p>2010 - 2018</p>
-                              <p>Rosenfeld Media is the premier publisher of UX books. As an editorial board member, I help guide decisions around what should get published, which authors get support, and what topics are relevant and germaine to UX practitioners. As strategic board member, I help broker valuable connections to Rosenfeld Media with other industry executives and consultants, and advise on future direction and opportunities.</p>
+                              <p>Student</p>
+                              <p>(East) Sussex Coast College</p>
+                              <p>2015 - 2018</p>
+                              <p>This is my college degree in information communication technology. I achieved a D* for both Level 2 and 3. Gained experience with the design of software, planning and then producing a product for a target market. Alongside gaining experience in written communication and languages such as; C++, PHP, and C#. Also obtained experience in designing a full game; including technical documentation, manual, and a game design document. With the game being produced on Unity 3D and available on GitHub.</p>
+                              <p><strong>This course consisted of modules in:</strong></p>
+                              <ul>
+                                <li>Programming (C++)</li>
+                                <li>Games Development (Unity3D)</li>
+                                <li>Website Production (HTML,CSS,PHP)</li>
+                                <li>Sound in Computer Games</li>
+                                <li>Digital Portfolio</li>
+                              </ul>
                             </li>
                         </ul>
                       </div>
@@ -224,7 +240,6 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script> <!-- Bootstrap Javascript stuff, animations etc. -->
-  
   <!-- Cool background effect -->
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>

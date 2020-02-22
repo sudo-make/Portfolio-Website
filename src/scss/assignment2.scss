@@ -343,7 +343,7 @@ h1.text-muted {
     overflow: hidden;
     -webkit-transition: opacity 300ms ease-in-out 1ms,visibility 1ms linear 302ms;
     transition: opacity 300ms ease-in-out 1ms,visibility 1ms linear 302ms;
-    width: 100%;
+    width: auto;
     opacity: 1;
 }
 
@@ -361,8 +361,8 @@ h1.text-muted {
     background: rgba(17, 17, 17, 0.253);
     cursor: default;
     float: right;
-    max-width: 650px;
-    min-height: 94vh;
+    max-width: 750px;
+    min-height: 98vh;
     margin-right: 8px;
     opacity: 1;
     -webkit-transition: opacity 400ms ease-in-out;

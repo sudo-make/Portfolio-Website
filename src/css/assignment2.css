@@ -94,47 +94,47 @@ html, body {
 
 @keyframes flicker {
   0% {
-    opacity: 0.58812; }
+    opacity: 0.29103; }
   5% {
-    opacity: 0.6682; }
+    opacity: 0.40774; }
   10% {
-    opacity: 0.59785; }
+    opacity: 0.88961; }
   15% {
-    opacity: 0.72912; }
+    opacity: 0.49372; }
   20% {
-    opacity: 0.88495; }
+    opacity: 0.47494; }
   25% {
-    opacity: 0.20594; }
+    opacity: 0.97573; }
   30% {
-    opacity: 0.43733; }
+    opacity: 0.96822; }
   35% {
-    opacity: 0.34988; }
+    opacity: 0.90351; }
   40% {
-    opacity: 0.12844; }
+    opacity: 0.79746; }
   45% {
-    opacity: 0.59384; }
+    opacity: 0.90387; }
   50% {
-    opacity: 0.69955; }
+    opacity: 0.92355; }
   55% {
-    opacity: 0.5788; }
+    opacity: 0.84878; }
   60% {
-    opacity: 0.65204; }
+    opacity: 0.23871; }
   65% {
-    opacity: 0.37392; }
+    opacity: 0.90682; }
   70% {
-    opacity: 0.95042; }
+    opacity: 0.59429; }
   75% {
-    opacity: 0.57093; }
+    opacity: 0.50481; }
   80% {
-    opacity: 0.94055; }
+    opacity: 0.25794; }
   85% {
-    opacity: 0.32412; }
+    opacity: 0.7975; }
   90% {
-    opacity: 0.29709; }
+    opacity: 0.52202; }
   95% {
-    opacity: 0.25779; }
+    opacity: 0.32694; }
   100% {
-    opacity: 0.01166; } }
+    opacity: 0.11128; } }
 
 .crt {
   background: #121010;
@@ -298,7 +298,7 @@ h1.text-muted {
   overflow: hidden;
   -webkit-transition: opacity 300ms ease-in-out 1ms,visibility 1ms linear 302ms;
   transition: opacity 300ms ease-in-out 1ms,visibility 1ms linear 302ms;
-  width: 100%;
+  width: auto;
   opacity: 1; }
 
 .close {
@@ -313,8 +313,8 @@ h1.text-muted {
   background: rgba(17, 17, 17, 0.253);
   cursor: default;
   float: right;
-  max-width: 650px;
-  min-height: 94vh;
+  max-width: 750px;
+  min-height: 98vh;
   margin-right: 8px;
   opacity: 1;
   -webkit-transition: opacity 400ms ease-in-out;
