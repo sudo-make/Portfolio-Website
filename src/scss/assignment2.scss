@@ -137,48 +137,6 @@ html, body {
 }
 
 // Home page
-#switch{
-  display:none;
-}
-.switch-label{
-  display:inline-block;
-  cursor:pointer;
-  background:#fff;
-  color:#111;
-  padding:10px;
-  padding-left:15px;
-  padding-right:15px;
-  border-radius:5px;
-  margin-top:10px;
-  box-shadow:0 2px #666;
-  &::after{
-    content:"on";
-  }
-  &::before{
-    content:" ";
-    display:inline-block;
-    border-radius:100%;
-    width:10px;
-    height:10px;
-    background:#003321;
-    margin-right:10px;
-    border:1px solid #111;
-  }
-  &:active{
-    box-shadow:none;
-    transform:translate3d(0,2px,0);
-  }
-}
-#switch:checked+.switch-label{
-  &::before{
-    background:#22ff55;
-  }
-  &::after{
-    content:"off";
-  }
-}
-
-
 @keyframes flicker{
   $steps:20;
   @for $i from 0 through $steps{
@@ -227,10 +185,9 @@ html, body {
     pointer-events:none;
   }
 }
-#switch:checked~.crt::after{
+.crt::after{
   animation:flicker 0.15s infinite;
 }
-
 
 @keyframes turn-on{
   0%{
@@ -254,8 +211,6 @@ html, body {
     filter:brightness(30);
     opacity:0;
   }
-  
-  
   
   11%{
     transform:scale(1,1) translate3d(0,0,0);
@@ -295,11 +250,11 @@ html, body {
   height:100%;
   border:none;
 }
-#switch~.crt>.screen{
+.crt>.screen{
   animation: turn-off 0.55s $ease-out-quint;
   animation-fill-mode:forwards;
 }
-#switch:checked~.crt>.screen{
+.crt>.screen{
   animation: turn-on 4s linear;
   animation-fill-mode:forwards;
 }
@@ -346,6 +301,11 @@ html, body {
   font-size: medium;
 }
 
+h1.text-muted {
+  color: #f7f7f7c5 !important;
+  font-size: 2em;
+}
+
 .text-light {
   font-size: 1.2em !important;
   color: $primary-txt-color !important;
@@ -366,6 +326,7 @@ html, body {
     outline: none;
     color: $primary-txt-color;
     background: transparent;
+    width: 500px;
 }
 
 // About modal
