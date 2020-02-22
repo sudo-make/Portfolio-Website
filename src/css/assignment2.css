@@ -11,6 +11,7 @@
 
 html, body {
   background-color: #1c1f27;
+  height: 100vh;
   padding: 1em;
   font-family: Nintendoid1;
   color: #e9e9e9;
@@ -65,7 +66,7 @@ html, body {
 .container-fluid {
   margin: 0;
   padding: 0;
-  height: 100vh; }
+  height: 100% !important; }
 
 .navigation-links {
   margin-right: 50px;
@@ -94,57 +95,56 @@ html, body {
 
 @keyframes flicker {
   0% {
-    opacity: 0.29103; }
+    opacity: 0.80557; }
   5% {
-    opacity: 0.40774; }
+    opacity: 0.36106; }
   10% {
-    opacity: 0.88961; }
+    opacity: 0.91851; }
   15% {
-    opacity: 0.49372; }
+    opacity: 0.95669; }
   20% {
-    opacity: 0.47494; }
+    opacity: 0.31678; }
   25% {
-    opacity: 0.97573; }
+    opacity: 0.12055; }
   30% {
-    opacity: 0.96822; }
+    opacity: 0.73818; }
   35% {
-    opacity: 0.90351; }
+    opacity: 0.76173; }
   40% {
-    opacity: 0.79746; }
+    opacity: 0.62355; }
   45% {
-    opacity: 0.90387; }
+    opacity: 0.17718; }
   50% {
-    opacity: 0.92355; }
+    opacity: 0.25492; }
   55% {
-    opacity: 0.84878; }
+    opacity: 0.93125; }
   60% {
-    opacity: 0.23871; }
+    opacity: 0.14877; }
   65% {
-    opacity: 0.90682; }
+    opacity: 0.18111; }
   70% {
-    opacity: 0.59429; }
+    opacity: 0.63781; }
   75% {
-    opacity: 0.50481; }
+    opacity: 0.22239; }
   80% {
-    opacity: 0.25794; }
+    opacity: 0.00918; }
   85% {
-    opacity: 0.7975; }
+    opacity: 0.87923; }
   90% {
-    opacity: 0.52202; }
+    opacity: 0.52352; }
   95% {
-    opacity: 0.32694; }
+    opacity: 0.22472; }
   100% {
-    opacity: 0.11128; } }
+    opacity: 0.07433; } }
 
 .crt {
   background: #121010;
   width: auto;
-  height: 80vh;
-  margin-top: 10px;
+  height: auto;
   margin-right: 15px;
   margin-left: 15px;
   position: relative;
-  overflow: hidden;
+  overflow: scroll;
   border: 2px solid #666; }
   .crt::after {
     content: " ";
@@ -173,6 +173,18 @@ html, body {
 
 .crt::after {
   animation: flicker 0.15s infinite; }
+
+.crt::-webkit-scrollbar {
+  display: none; }
+
+.crt::-webkit-scrollbar-track {
+  display: none; }
+
+.crt::-webkit-scrollbar-thumb {
+  display: none; }
+
+.crt::-webkit-scrollbar-thumb:hover {
+  display: none; }
 
 @keyframes turn-on {
   0% {
@@ -218,8 +230,8 @@ html, body {
     filter: brightness(50); } }
 
 .screen {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   border: none; }
 
 .crt > .screen {
@@ -257,7 +269,9 @@ html, body {
   background: #1c1f27;
   background-size: cover;
   background-position: center;
-  color: #e9e9e9; }
+  color: #e9e9e9;
+  width: auto;
+  height: auto; }
 
 .text-muted {
   color: #f7f7f7c5 !important;
@@ -274,9 +288,16 @@ h1.text-muted {
 
 .terminal-input-container {
   width: auto;
-  height: 100vh;
+  height: auto;
   padding-left: 50px;
   padding-right: 50px; }
+
+#ls-projects {
+  width: 800px;
+  height: 300px;
+  border-style: dashed;
+  border-color: #e9e9e9;
+  border-radius: 2px; }
 
 #terminal-input {
   border: none transparent;

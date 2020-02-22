@@ -36,6 +36,7 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
 
 html, body {
     background-color:$index-bg-color;
+    height: 100vh;
     padding: 1em;
     font-family: Nintendoid1;
     color: $primary-txt-color;
@@ -102,7 +103,7 @@ html, body {
 .container-fluid {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 100% !important;
 }
 
 .navigation-links {
@@ -148,12 +149,11 @@ html, body {
 .crt {
   background:$screen-background;
   width:auto;
-  height:80vh;
-  margin-top:10px;
+  height:auto;
   margin-right: 15px;
   margin-left: 15px;
   position:relative;
-  overflow:hidden;
+  overflow:scroll;
   border:2px solid #666;
 
   // flicker
@@ -187,6 +187,20 @@ html, body {
 }
 .crt::after{
   animation:flicker 0.15s infinite;
+}
+
+// custom scrollbar
+.crt::-webkit-scrollbar {
+  display: none;
+}
+.crt::-webkit-scrollbar-track {
+  display: none;
+}
+.crt::-webkit-scrollbar-thumb {
+  display: none;
+}
+.crt::-webkit-scrollbar-thumb:hover {
+  display: none;
 }
 
 @keyframes turn-on{
@@ -246,8 +260,8 @@ html, body {
   }
 }
 .screen{
-  width:100%;
-  height:100%;
+  width:auto;
+  height:auto;
   border:none;
 }
 .crt>.screen{
@@ -293,6 +307,8 @@ html, body {
     background-size: cover;
     background-position: center;
     color: $primary-txt-color;
+    width: auto;
+    height: auto;
 }
 
 .text-muted {
@@ -313,14 +329,20 @@ h1.text-muted {
 
 .terminal-input-container {
     width: auto;
-    height: 100vh;
+    height: auto;
     padding-left: 50px;
     padding-right: 50px;
 }
 
+#ls-projects {
+  width: 800px;
+  height: 300px;
+  border-style: dashed;
+  border-color: $primary-txt-color;
+  border-radius: 2px;
+}
 
 // Cursor
-
 #terminal-input {
     border: none transparent;
     outline: none;

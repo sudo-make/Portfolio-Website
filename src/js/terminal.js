@@ -1,7 +1,6 @@
 // Show the about modal when ./about.sh is typed
 
-// Event listener
-// var t_input = document.getElementById("#terminal-input");
+// add keyEvent listener when window fully loads
 window.onload=function() {
     document.getElementById('terminal-input').addEventListener("keydown", function (e) {
         if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
@@ -13,11 +12,31 @@ window.onload=function() {
 function input() {
     var terminal_input = $('#terminal-input').val(); // Get the terminal input
 
-    if (terminal_input == "./about.sh") {
+
+    if (terminal_input == "clear") {
+        document.getElementById('ls-projects').style.display = "none";
+        $('.line-break').remove();
+        $('.error').remove();
+        document.getElementById('terminal-input').value = '';
+    }
+    else if (terminal_input == "./about.sh") {
         $('#aboutModal').modal('show'); // show about modal
-    } 
-    if (terminal_input != "./about.sh") {
-        $('#input-label').prepend("<p>Error: Please enter a correct command!</p>");
-        $('#input-label').prepend("</br>");
+        document.getElementById('terminal-input').value = '';
+    }
+    else if (terminal_input == "./contact.sh") {
+        $('#contactModal').modal('show'); // show about modal
+        document.getElementById('terminal-input').value = '';
+    }
+    else if (terminal_input == "ls projects") {
+        $('#output').append("</br class='line-break'>");
+        document.getElementById('ls-projects').style.display = "block";
+        $('#output').append("</br class='line-break'>");
+        document.getElementById('terminal-input').value = '';
+    }
+
+    else {
+        $('#output').append("<p class='error'>Bash: command not found: " + terminal_input + "</p>");
+        $('#output').append("</br class='line-break'>");
+        document.getElementById('terminal-input').value = '';
     }
 }

@@ -56,7 +56,6 @@
         $("#navbarSupportedContent").dynamicMenu();
       </script>
     </nav> <!-- End of navigation -->
-
     <div class="terminal-input-container text-monospace text-muted screen">
       <p class="text-light text-monospace"> > ./run-setup.sh </p>
 
@@ -74,6 +73,11 @@
 
         <br>
         <p class="text-muted">please enter a command to continue: e.g. <a href="#" class="text-muted" data-toggle="modal" data-target="#aboutModal">./about.sh</a> | <a href="#" class="text-muted" data-toggle="modal" data-target="#contactModal">./contact.sh</a> | <a href="posts.html" class="text-muted">ls projects</a></p>
+        <div id="ls-projects" style="display: none;">
+          <!-- This will display a list of projects when ls projects is entered into the terminal -->
+
+        </div>
+        <div id="output"></div>
       </div>
       <label id="input-label" class="text-light text-monospace" for="terminal-input">visitor@home: ~$ <input class="text-monospace" value="" type="text" name="terminal-input" id="terminal-input" autofocus> <button style="display: none;"></button>
     </div>
