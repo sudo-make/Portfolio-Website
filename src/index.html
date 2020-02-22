@@ -28,7 +28,7 @@
   <!-- Image that holds the start of terminal -->
 
   <!-- Navigation bar/header -->
-  <div class="container-fluid home-page">
+  <div class="container-fluid home-page crt">
     <nav class="navbar navbar-expand-lg navbar-light">
       <!-- Start of navigation -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -56,45 +56,23 @@
       </script>
     </nav> <!-- End of navigation -->
 
-    <canvas id="demo-canvas"></canvas>
-    <pre class="text-light">
-      > ./run-website.sh
-      Setting up things..........
-      [#########################]
+    <div class="terminal-input-container text-monospace text-muted screen">
+      <p class="text-light text-monospace"> > ./run-setup.sh </p>
 
-      Doing some final background stuff.......
-      [#########################]
+      <div class="terminal-output">
+        <h1 class="text-monospace text-muted">Welcome!......</h1>
+        <p class="text-monospace text-muted terminal-output">My name is Callum-James Smith, I'm a Student, Game Developer, I also <i class="fa fa-heart" aria-hidden="true"></i> Linux! </p>
 
-      Done :)
-    </pre>
-    <div class="jumbotron demo">
-      <div class="jumbo-info">
-        <h1 class="display-4">Callum-James Smith</h1>
-        <p class="lead">Student, Game dev, Linux Fanatic.</p>
-        <div class="btn-group" role="group" aria-label="Social media links">
-          <button type="button" class="btn btn-light btn-social">
-            <a class="text-dark" href="https://www.linkedin.com/in/callum-james-smith/" aria-label="External link to my LinkedIn"><i class="fa fa-linkedin"
-                aria-hidden="true"></i></a>
-          </button>
-          <button type="button" class="btn btn-light btn-social">
-            <a class="text-dark" href="https://github.com/sudo-make" aria-label="External link to my GitHub page"><i class="fa fa-github"
-                aria-hidden="true"></i></a>
-          </button>
-        </div>
+        <p class="text-monospace text-muted">Here are some important links:</p>
+        
+        <p>* GitHub -> <a class="text-dark" href="https://github.com/sudo-make" aria-label="External link to my GitHub page"><i class="fa fa-github" aria-hidden="true"></i></a></p>
+
+        <p>* LinkedIn -> <a class="text-dark" href="https://www.linkedin.com/in/callum-james-smith/" aria-label="External link to my LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></p>
+
+        <br>
+        <p class="text-muted">please enter a command to continue: e.g. <a href="#" class="text-muted" data-toggle="modal" data-target="#aboutModal">./about.sh</a> | <a href="#" class="text-muted" data-toggle="modal" data-target="#contactModal">./contact.sh</a> | <a href="posts.html" class="text-muted">ls projects</a></p>
       </div>
-    </div>
-    
-    <div class="card mb-3 home-featured" style="max-width: 500px; float: right; margin: 8px; width: auto;">
-      <div class="row no-gutters">
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">My Hackintosh Setup</h5>
-            <p class="card-text">How I setup my Hackingtosh using Amd OS X...</p>
-            <a href="#" class="btn btn-outline-light">Continue reading</a>
-            <p class="card-text"><small class="text-muted">Last updated 1 day 3 hours ago</small></p>
-          </div>
-        </div>
-      </div>
+      <label class="text-light text-monospace" for="terminal-input">root@sudo-make: ~$ <input class="text-monospace" type="text" name="terminal-input" id="terminal-input" autofocus>
     </div>
   </div> <!-- End of page container-->
 
