@@ -138,6 +138,7 @@ html, body {
 
 .fa:hover {
     transition: ease-in 0.3s;
+    cursor: pointer;
     color: $hover-color;
 }
 
@@ -334,8 +335,8 @@ h1.text-muted {
 }
 
 #ls-projects {
-  width: 800px;
-  height: 300px;
+  width: auto;
+  height: auto;
   border-style: dashed;
   border-color: $primary-txt-color;
   border-radius: 2px;

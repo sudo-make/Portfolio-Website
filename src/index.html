@@ -12,6 +12,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="js/terminal.js"></script>
+
+  <!-- Start jQuery code -->
+<script type="text/javascript">
+  $("#contactForm").submit(function(event){
+    event.preventDefault(); //prevent default action 
+    var proceed = true;
+    var form = this;
+    
+    //simple validation at client's end
+    //loop through each field and we simply change border color to red for invalid fields		
+    $(form).find(':required').each(function(){
+      $(this).css('border-color',''); 
+      if(!$.trim($(this).val())){ //if this field is empty 
+        $(this).css('border-color','red'); //change border color to red   
+        proceed = false; //set do not proceed flag
+      }
+      //check invalid email
+      var email_reg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; 
+      if($(this).attr("type")=="email" && !email_reg.test($.trim($(this).val()))){
+        $(this).css('border-color','red'); //change border color to red   
+        proceed = false; //set do not proceed flag				
+      }	
+  
+    }).keyup(function() { //reset previously set border colors on .keyup()
+      $(this).css('border-color',''); 
+    }).change(function() {  //for select box
+      $(this).css('border-color',''); 
+    });
+    
+    if(proceed){ //everything looks good! proceed...
+      //get input field values data to be sent to server
+      var post_url = $(this).attr("action"); //get form action url
+      var request_method = $(this).attr("method"); //get form GET/POST method
+      var form_data = $(this).serialize(); //Encode form elements for submission
+      
+      //Ajax post data to server
+      $.ajax({
+        url : post_url,
+        type: request_method,
+        dataType : 'json',
+        data : form_data
+      })
+      .done(function(response){ 
+        if(response.type == 'error'){ //load json data from server and output message     
+          output = '<div class="error">'+response.text+'</div>';
+        }else{
+          $(form)[0].reset(); //reset this form upon success
+          output = '<div class="success">'+response.text+'</div>';
+        }
+        $("#contact_form #contact_results").html(output);
+      });
+    }
+  });
+  </script>
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
   <!-- Below is the API for Fontawesome, this provides some icons that allow for quicker load times and better responsiveness -->
@@ -40,10 +94,53 @@
 
         <p class="text-muted">please enter a command to continue: e.g. <a href="#" class="text-muted" data-toggle="modal" data-target="#aboutModal">./about.sh</a> | <a href="#" class="text-muted" data-toggle="modal" data-target="#contactModal">./contact.sh</a> | <a href="#" onclick="lsProjects()" class="text-muted">ls projects</a></p>
         <!-- Any output will be displayed here -->
-        <div id="output"></div>
-        <div id="ls-projects" style="display: none;">
-          <!-- This will display a list of projects when ls projects is entered into the terminal -->
-
+        <div id="output">
+          <div id="ls-projects" class="table-responsive" style="display: none;">
+            <!-- This will display a list of projects when ls projects is entered into the terminal -->
+            <table class="table table-borderless text-light">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Source URL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><i class="fa fa-gamepad" aria-hidden="true"></i></th>
+                  <td>2D Rougelike (ain't thought of a name yet)</td>
+                  <td>A 2D rougelike game I'm currently working on; again, made using Unity3D.</td>
+                  <td><a href="https://github.com/sudo-make/2D-rougelike-game"><i class="fa fa-github" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="fa fa-gamepad" aria-hidden="true"></i></th>
+                  <td>Nihil (game)</td>
+                  <td>A 3D horror game made using Unity3D</td>
+                  <td><a href="https://github.com/sudo-make/Nihil---Game"><i class="fa fa-github" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="fa fa-gamepad" aria-hidden="true"></i></th>
+                  <td>Global Game Jam 2019</td>
+                  <td>My submission to the 2019 Global Game Jam event. This was also make in Unity3D; and was a team effort.</td>
+                  <td><a href="https://github.com/sudo-make/Global-Game-Jam-2019---Memories"><i class="fa fa-github" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="fa fa-gamepad" aria-hidden="true"></i></th>
+                  <td>2D Java "Bejeweled" clone</td>
+                  <td>This is a 2D game made using Java swing; as part of an assignment in my 2nd year at university.</td>
+                  <td><a href="https://github.com/sudo-make/Java-Game-CE203-A2-"><i class="fa fa-github" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <th scope="row"><i class="fa fa-html5" aria-hidden="true"></i></th>
+                  <td>Portfolio Website</td>
+                  <td>If your seeing this; then you already know all about it :) This website was created using Bootstrap, JQuery, SCSS, PHP and HTML5</td>
+                  <td><a href="https://github.com/sudo-make/Portfolio-Website"><i class="fa fa-github" aria-hidden="true"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br>
         </div>
       </div>
       <!-- The terminal input -->
@@ -167,20 +264,24 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="contactForm" action="contact.php" method="POST" novalidate>
+            <div class="form-group">
+              <label for="from-email" class="col-form-label">Your email:</label>
+              <input type="email" class="form-control" id="from-email" required>
+            </div>
             <div class="form-group">
               <label for="subject" class="col-form-label">Subject:</label>
-              <input type="text" class="form-control" id="subject">
+              <input type="text" class="form-control" id="subject" required>
             </div>
             <div class="form-group">
               <label for="message-text" class="col-form-label">Message:</label>
-              <textarea class="form-control" id="message-text"></textarea>
+              <textarea class="form-control" id="message-text" required></textarea>
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-outline-light" data-dismiss="modal">Send message</button>
+          <button type="button" class="btn btn-outline-light" id="submitForm" data-dismiss="modal">Send message</button>
         </div>
       </div>
     </div>
