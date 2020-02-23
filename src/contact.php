@@ -2,10 +2,10 @@
 if($_POST)
 {
 	$to_email   	= "csmith99@protonmail.com"; //Recipient email, Replace with own email here
-	$from_email     = 'noreply@sudo-make.co.uk'; //from mail, it is mandatory with some hosts and without it mail might endup in spam.
+	$from_email     = 'noreply@sudo-make.co.uk'; //from mail, it is mandatory with some hosts and without it mail might end up in spam.
 	
 	//check if its an ajax request, exit if not
-    if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
+    if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) OR strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
 		
 		$output = json_encode(array( //create JSON data
 			'type'=>'error', 
@@ -15,9 +15,9 @@ if($_POST)
     } 
 	
 	//Sanitize input data using PHP filter_var().
-	$user_email		= filter_var($_POST["from-email"], FILTER_SANITIZE_EMAIL);
+	$user_email		= filter_var($_POST["user_email"], FILTER_SANITIZE_EMAIL);
 	$subject		= filter_var($_POST["subject"], FILTER_SANITIZE_STRING);
-	$message		= filter_var($_POST["msg"], FILTER_SANITIZE_STRING);
+	$message		= filter_var($_POST["message"], FILTER_SANITIZE_STRING);
 	
 	//additional php validation
 	if(!filter_var($user_email, FILTER_VALIDATE_EMAIL)){ //email validation
@@ -34,7 +34,7 @@ if($_POST)
 	}
 	
 	//email body
-	$message_body = $message."\r\n\r\n-"."\r\nEmail : ".$user_email . "This is a test email.";
+	$message_body = $message."\r\n\r\n-"."\r\nEmail : ".$user_email;
 	
 	//proceed with PHP email.
 	$headers = 'From: '. $from_email .'' . "\r\n" .

@@ -10,62 +10,10 @@
   <title>sudo-make@home ~$ </title>
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="js/terminal.js"></script>
 
-  <!-- Start jQuery code -->
-<script type="text/javascript">
-  $("#contactForm").submit(function(event){
-    event.preventDefault(); //prevent default action 
-    var proceed = true;
-    var form = this;
-    
-    //simple validation at client's end
-    //loop through each field and we simply change border color to red for invalid fields		
-    $(form).find(':required').each(function(){
-      $(this).css('border-color',''); 
-      if(!$.trim($(this).val())){ //if this field is empty 
-        $(this).css('border-color','red'); //change border color to red   
-        proceed = false; //set do not proceed flag
-      }
-      //check invalid email
-      var email_reg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; 
-      if($(this).attr("type")=="email" && !email_reg.test($.trim($(this).val()))){
-        $(this).css('border-color','red'); //change border color to red   
-        proceed = false; //set do not proceed flag				
-      }	
-  
-    }).keyup(function() { //reset previously set border colors on .keyup()
-      $(this).css('border-color',''); 
-    }).change(function() {  //for select box
-      $(this).css('border-color',''); 
-    });
-    
-    if(proceed){ //everything looks good! proceed...
-      //get input field values data to be sent to server
-      var post_url = $(this).attr("action"); //get form action url
-      var request_method = $(this).attr("method"); //get form GET/POST method
-      var form_data = $(this).serialize(); //Encode form elements for submission
-      
-      //Ajax post data to server
-      $.ajax({
-        url : post_url,
-        type: request_method,
-        dataType : 'json',
-        data : form_data
-      })
-      .done(function(response){ 
-        if(response.type == 'error'){ //load json data from server and output message     
-          output = '<div class="error">'+response.text+'</div>';
-        }else{
-          $(form)[0].reset(); //reset this form upon success
-          output = '<div class="success">'+response.text+'</div>';
-        }
-        $("#contact_form #contact_results").html(output);
-      });
-    }
-  });
-  </script>
+  <!-- include Google hosted jQuery Library -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
   <!-- Below is the API for Fontawesome, this provides some icons that allow for quicker load times and better responsiveness -->
@@ -92,7 +40,7 @@
         <p>* GitHub -> <a class="text-dark" href="https://github.com/sudo-make" aria-label="External link to my GitHub page"><i class="fa fa-github" aria-hidden="true"></i></a></p>
         <p>* LinkedIn -> <a class="text-dark" href="https://www.linkedin.com/in/callum-james-smith/" aria-label="External link to my LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></p>
 
-        <p class="text-muted">please enter a command to continue: e.g. <a href="#" class="text-muted" data-toggle="modal" data-target="#aboutModal">./about.sh</a> | <a href="#" class="text-muted" data-toggle="modal" data-target="#contactModal">./contact.sh</a> | <a href="#" onclick="lsProjects()" class="text-muted">ls projects</a></p>
+        <p class="text-muted">please enter a command to continue: e.g. <a href="#" class="text-muted" onclick="whois()">whois [callum | sudo | sudo-make]</a> | <a href="#" class="text-muted" data-toggle="modal" data-target="#contactModal">./contact.sh</a> | <a href="#" onclick="lsProjects()" class="text-muted">ls projects</a></p>
         <!-- Any output will be displayed here -->
         <div id="output">
           <div id="ls-projects" class="table-responsive" style="display: none;">
@@ -140,6 +88,7 @@
               </tbody>
             </table>
           </div>
+          
           <br>
         </div>
       </div>
@@ -147,110 +96,6 @@
       <label id="input-label" class="text-light text-monospace" for="terminal-input">visitor@home: ~$ <input class="text-monospace" value="" type="text" name="terminal-input" id="terminal-input" autofocus>
     </div>
   </div> <!-- End of page container-->
-
-  <!-- About Modal -->
-  <div class="modal fade" id="aboutModal" tabindex="0" role="dialog" aria-labelledby="aboutModalTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="aboutModalTitle">About Me</h5>
-          <button type="button" class="close" data-dismiss="modal" tabindex="0" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="card mb-3" style="max-width: 650px;">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="images/profile.jpg" class="card-img" alt="picture of Irene Au">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Hello!</h5>
-                  <p class="card-text">Game dev and 2nd year student at the <i class="fa fa-university" aria-hidden="true"></i> University of Essex.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card text-center card-about">
-            <div class="card-header">
-              <ul class="nav nav-tabs card-header-tabs" id="tabs" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active" id="general-tab" data-toggle="tab" href="#general" role="tab"
-                    aria-controls="general" aria-selected="true">General</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="experience-tab" data-toggle="tab" href="#experience" role="tab"
-                    aria-controls="experience" aria-selected="false">Experience</a>
-                </li>
-              </ul>
-            </div>
-            <!-- The card bodies, these are shown when user clicks on corresponding tab -->
-            <div class="card-body">
-              <div class="tab-content text-monospace" id="myTabContent">
-                <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
-                  My name is Callum-James Smith; I am a 2nd year student at the university of essex; studying computer science.
-                  <br>
-                  <br> I make <i class="fa fa-gamepad" aria-hidden="true"></i> games, create websites, and mess around with <i class="fa fa-linux" aria-hidden="true"></i> Linux.
-                  <br><br>
-                  <p class="text-left small font-italic" >* I also like dragons</p>
-                  <pre class="text-light">
-                    \`-\`-._
-                    \` )`. `-.__      ,
- '' , . _       _,-._;'_,-`__,-'    ,/
-: `. ` , _' :- '--'._ ' `------._,-;'
- `- ,`- '            `--..__,,---'
-                  </pre>
-                </div>
-                  <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
-                    <div class="container-fluid mt-5 mb-5">
-                      <div class="row">
-                        <div class="col-md-10 offset-md-1">
-                          <ul class="timeline">
-                            <li>
-                              <p>Student</p>
-                              <p>University of Essex</p>
-                              <p>Oct 2018 - Present</p>
-                              <p><strong>Modules include:</strong></p>
-                                <ul>
-                                  <li>Team Project</li>
-                                  <li>Introduction to programming (Python)</li>
-                                  <li>Mathematics for computing</li>
-                                  <li>Object-oriented programming (Java)</li>
-                                  <li>C++ Programming</li>
-                                  <li>Games Programming</li>
-                                </ul>
-                              <p><strong>Certifications:</strong> Cisco Certified Network Associate (CCNA).</p>
-                              
-                            </li>
-                            <br>
-                            <li>
-                              <p>Student</p>
-                              <p>(East) Sussex Coast College</p>
-                              <p>2015 - 2018</p>
-                              <p>This is my college degree in information communication technology. I achieved a D* for both Level 2 and 3. Gained experience with the design of software, planning and then producing a product for a target market. Alongside gaining experience in written communication and languages such as; C++, PHP, and C#. Also obtained experience in designing a full game; including technical documentation, manual, and a game design document. With the game being produced on Unity 3D and available on GitHub.</p>
-                              <p><strong>This course consisted of modules in:</strong></p>
-                              <ul>
-                                <li>Programming (C++)</li>
-                                <li>Games Development (Unity3D)</li>
-                                <li>Website Production (HTML,CSS,PHP)</li>
-                                <li>Sound in Computer Games</li>
-                                <li>Digital Portfolio</li>
-                              </ul>
-                            </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> <!-- End of content in tabbed pane -->
-            </div> <!-- End of Tabbed Pane Body -->
-          </div> <!-- End of Tabbed Pane -->
-        </div> <!-- End of Modal Body -->
-      </div> <!-- End of Modal Content -->
-    </div> <!-- End of Modal Dialog -->
-  </div><!-- End of About Modal -->
 
   <!-- Contact Modal -->
   <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalTitle"
@@ -262,26 +107,27 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
+          <div id="contact_results"></div>
         </div>
         <div class="modal-body">
-          <form id="contactForm" action="contact.php" method="POST" novalidate>
+          <form action="contact.php" method="post" id="contactForm" novalidate>
             <div class="form-group">
               <label for="from-email" class="col-form-label">Your email:</label>
-              <input type="email" class="form-control" id="from-email" required>
+              <input type="email" class="form-control" id="user_email" name="user_email" required>
             </div>
             <div class="form-group">
               <label for="subject" class="col-form-label">Subject:</label>
-              <input type="text" class="form-control" id="subject" required>
+              <input type="text" class="form-control" id="subject" name="subject" required>
             </div>
             <div class="form-group">
               <label for="message-text" class="col-form-label">Message:</label>
-              <textarea class="form-control" id="message-text" required></textarea>
+              <textarea class="form-control" id="message" name="message" required></textarea>
             </div>
+            <input type="submit" class="btn btn-outline-light" name="Submit" id="submitForm" value="Submit"></input>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-outline-light" id="submitForm" data-dismiss="modal">Send message</button>
         </div>
       </div>
     </div>
@@ -304,6 +150,60 @@
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
   <script src="js/effect.js"></script>
+
+    <!-- Start jQuery code -->
+    <script type="text/javascript">
+      $("#contactForm").submit(function(event){
+        event.preventDefault(); //prevent default action 
+        var proceed = true;
+        var form = this;
+        
+        //simple validation at client's end
+        //loop through each field and we simply change border color to red for invalid fields		
+        $(form).find(':required').each(function(){
+          $(this).css('border-color',''); 
+          if(!$.trim($(this).val())){ //if this field is empty 
+            $(this).css('border-color','red'); //change border color to red   
+            proceed = false; //set do not proceed flag
+          }
+          //check invalid email
+          var email_reg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; 
+          if($(this).attr("type")=="email" && !email_reg.test($.trim($(this).val()))){
+            $(this).css('border-color','red'); //change border color to red   
+            proceed = false; //set do not proceed flag				
+          }	
+      
+        }).keyup(function() { //reset previously set border colors on .keyup()
+          $(this).css('border-color',''); 
+        }).change(function() {  //for select box
+          $(this).css('border-color',''); 
+        });
+        
+        if(proceed){ //everything looks good! proceed...
+          //get input field values data to be sent to server
+          var post_url = $(this).attr("action"); //get form action url
+          var request_method = $(this).attr("method"); //get form GET/POST method
+          var form_data = $(this).serialize(); //Encode form elements for submission
+          
+          //Ajax post data to server
+          $.ajax({
+            url : post_url,
+            type: request_method,
+            dataType : 'json',
+            data : form_data
+          })
+          .done(function(response){ 
+            if(response.type == 'error'){ //load json data from server and output message     
+              output = '<div class="error">'+response.text+'</div>';
+            }else{
+              $(form)[0].reset(); //reset this form upon success
+              output = '<div class="success">'+response.text+'</div>';
+            }
+            $("#contact_form #contact_results").html(output);
+          });
+        }
+      });
+      </script>
 </body>
 
 </html>
