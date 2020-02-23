@@ -12,7 +12,7 @@ window.onload=function() {
 }
 
 function input() {
-    var terminal_input = $('#terminal-input').val(); // Get the terminal input
+    var terminal_input = $('#terminal-input').val().toLowerCase().trim(); // Get the terminal input
 
     if (terminal_input == "clear") {
         document.getElementById('ls-projects').style.display = "none";
@@ -44,7 +44,7 @@ function input() {
     else if (terminal_input == "ls projects") {
         $('#output').append("</br class='line-break'>");
         document.getElementById('ls-projects').style.display = "block";
-        $('#output').append("</br class='line-break'>");
+        $('#ls-projects').append("</br class='line-break'>");
         document.getElementById('terminal-input').value = '';
     }
     else {
