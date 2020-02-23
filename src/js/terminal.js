@@ -2,6 +2,7 @@
 
 var lsClicked = false;
 var whoisClicked = false;
+var contactClicked = false;
 // add keyEvent listener when window fully loads
 window.onload=function() {
     document.getElementById('terminal-input').addEventListener("keydown", function (e) {
@@ -33,8 +34,12 @@ function input() {
         document.getElementById('terminal-input').value = '';
     }
     else if (terminal_input == "./contact.sh") {
-        $('#contactModal').modal('show'); // show about modal
-        document.getElementById('terminal-input').value = '';
+        if (contactClicked) {
+            // If the contact form is already open
+            $('#output').append("<p class='error'>Command is already running, please type 'clear' into the prompt.</p>");
+            $('#output').append("</br class='line-break'>");
+            document.getElementById('terminal-input').value = '';
+        } else contact();
     }
     else if (terminal_input == "ls projects") {
         if (lsClicked) {
@@ -50,58 +55,20 @@ function input() {
             $('#output').append("<p class='error'>Command is already running, please type 'clear' into the prompt.</p>");
             $('#output').append("</br class='line-break'>");
             document.getElementById('terminal-input').value = '';
-        } else {
-            $('#output').append("<h3 class='terminal-out'>Hey!</h3>");
-            $('#output').append("<p class='terminal-out'>My name is Callum-James Smith; I am a 2nd year student at the university of essex; studying computer science.</p>");
-            $('#output').append('<p class="terminal-out">I make <i class="terminal-out fa fa-gamepad" aria-hidden="true"></i> games, create websites, and mess around with <i class="terminal-out fa fa-linux" aria-hidden="true"></i> Linux.</p>')
-            $('#output').append('<h3 class="terminal-out">My education:</h3><br>')
-            var lOutput = `<div class="terminal-out">
-                        <ul class="terminal-out timeline">
-                        <li>
-                            <p>Student</p>
-                            <p>University of Essex</p>
-                            <p>Oct 2018 - Present</p>
-                            <p><strong>Modules include:</strong></p>
-                            <ul>
-                                <li>Team Project</li>
-                                <li>Introduction to programming (Python)</li>
-                                <li>Mathematics for computing</li>
-                                <li>Object-oriented programming (Java)</li>
-                                <li>C++ Programming</li>
-                                <li>Games Programming</li>
-                            </ul>
-                            <p><strong>Certifications:</strong> Cisco Certified Network Associate (CCNA).</p>
-                            
-                        </li>
-                        <br>
-                        <li>
-                            <p>Student</p>
-                            <p>(East) Sussex Coast College</p>
-                            <p>2015 - 2018</p>
-                            <p>This is my college degree in information communication technology. I achieved a D* for both Level 2 and 3. Gained experience with the design of software, planning and then producing a product for a target market. Alongside gaining experience in written communication and languages such as; C++, PHP, and C#. Also obtained experience in designing a full game; including technical documentation, manual, and a game design document. With the game being produced on Unity 3D and available on GitHub.</p>
-                            <p><strong>This course consisted of modules in:</strong></p>
-                            <ul>
-                            <li>Programming (C++)</li>
-                            <li>Games Development (Unity3D)</li>
-                            <li>Website Production (HTML,CSS,PHP)</li>
-                            <li>Sound in Computer Games</li>
-                            <li>Digital Portfolio</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    </div>`;
-
-            // Experience
-            $('#output').append(lOutput);
-            $('#ls-projects').append("</br class='line-break'>");
-            document.getElementById('terminal-input').value = '';
-            whoisClicked = true;
-        }
+        } else whois();
     }
     else {
         $('#output').append("<p class='error'>Bash: command not found: " + terminal_input + "</p>");
         $('#output').append("</br class='line-break'>");
         document.getElementById('terminal-input').value = '';
+    }
+}
+
+function contact() {
+    if (!contactClicked) {
+        document.getElementById('contactForm').style.display = "block";
+        document.getElementById('terminal-input').value = '';
+        contactClicked = true;
     }
 }
 
@@ -167,6 +134,7 @@ function whois() {
 
 function clear() {
     document.getElementById('ls-projects').style.display = "none";
+    document.getElementById('contactForm').style.display = "none";
     $('br').remove();
     $('.terminal-out').remove();
     $('.error').remove();

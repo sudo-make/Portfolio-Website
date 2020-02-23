@@ -40,7 +40,7 @@
         <p>* GitHub -> <a class="text-dark" href="https://github.com/sudo-make" aria-label="External link to my GitHub page"><i class="fa fa-github" aria-hidden="true"></i></a></p>
         <p>* LinkedIn -> <a class="text-dark" href="https://www.linkedin.com/in/callum-james-smith/" aria-label="External link to my LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></p>
 
-        <p class="text-muted">please enter a command to continue: e.g. <a href="#" class="text-muted" onclick="whois()">whois [callum | sudo | sudo-make]</a> | <a href="#" class="text-muted" data-toggle="modal" data-target="#contactModal">./contact.sh</a> | <a href="#" onclick="lsProjects()" class="text-muted">ls projects</a></p>
+        <p class="text-muted">please enter a command to continue: e.g. <a href="#" class="text-muted" onclick="whois()">whois [callum | sudo | sudo-make]</a> | <a href="#" class="text-muted" onclick="contact()">./contact.sh</a> | <a href="#" onclick="lsProjects()" class="text-muted">ls projects</a></p>
         <!-- Any output will be displayed here -->
         <div id="output">
           <div id="ls-projects" class="table-responsive" style="display: none;">
@@ -89,6 +89,78 @@
             </table>
           </div>
           
+          <div id="contactForm" style="display: none;">
+            <form action="contact.php" method="post" id="contact_form" novalidate>
+              <div class="form-group">
+                <label for="from-email" class="col-form-label">Your email:</label>
+                <input type="email" class="form-control" id="user_email" name="user_email" required>
+              </div>
+              <div class="form-group">
+                <label for="subject" class="col-form-label">Subject:</label>
+                <input type="text" class="form-control" id="subject" name="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Message:</label>
+                <textarea class="form-control" id="message" name="message" required></textarea>
+              </div>
+              <input type="submit" class="btn btn-outline-light" name="Submit" id="submitForm" value="Submit"></input>
+            </form>
+            <div id="contact_results"></div>
+            <!-- Start jQuery code -->
+            <script type="text/javascript">
+              $("#contact_form").submit(function(event){
+                event.preventDefault(); //prevent default action 
+                var proceed = true;
+                var form = this;
+                
+                //simple validation at client's end
+                //loop through each field and we simply change border color to red for invalid fields		
+                $(form).find(':required').each(function(){
+                  $(this).css('border-color',''); 
+                  if(!$.trim($(this).val())){ //if this field is empty 
+                    $(this).css('border-color','red'); //change border color to red   
+                    proceed = false; //set do not proceed flag
+                  }
+                  //check invalid email
+                  var email_reg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; 
+                  if($(this).attr("type")=="email" && !email_reg.test($.trim($(this).val()))){
+                    $(this).css('border-color','red'); //change border color to red   
+                    proceed = false; //set do not proceed flag				
+                  }	
+              
+                }).keyup(function() { //reset previously set border colors on .keyup()
+                  $(this).css('border-color',''); 
+                }).change(function() {  //for select box
+                  $(this).css('border-color',''); 
+                });
+                
+                if(proceed){ //everything looks good! proceed...
+                  //get input field values data to be sent to server
+                  var post_url = $(this).attr("action"); //get form action url
+                  var request_method = $(this).attr("method"); //get form GET/POST method
+                  var form_data = $(this).serialize(); //Encode form elements for submission
+                  
+                  //Ajax post data to server
+                  $.ajax({
+                    url : post_url,
+                    type: request_method,
+                    dataType : 'json',
+                    data : form_data
+                  })
+                  .done(function(response){ 
+                    if(response.type == 'error'){ //load json data from server and output message     
+                      output = '<div class="error">'+response.text+'</div>';
+                    }else{
+                      $(form)[0].reset(); //reset this form upon success
+                      output = '<div class="success">'+response.text+'</div>';
+                    }
+                    $("#contact_form #contact_results").html(output);
+                  });
+                }
+              });
+            </script>
+          </div>
+
           <br>
         </div>
       </div>
@@ -96,42 +168,6 @@
       <label id="input-label" class="text-light text-monospace" for="terminal-input">visitor@home: ~$ <input class="text-monospace" value="" type="text" name="terminal-input" id="terminal-input" autofocus>
     </div>
   </div> <!-- End of page container-->
-
-  <!-- Contact Modal -->
-  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalTitle"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Send me text stuffs</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <div id="contact_results"></div>
-        </div>
-        <div class="modal-body">
-          <form action="contact.php" method="post" id="contactForm" novalidate>
-            <div class="form-group">
-              <label for="from-email" class="col-form-label">Your email:</label>
-              <input type="email" class="form-control" id="user_email" name="user_email" required>
-            </div>
-            <div class="form-group">
-              <label for="subject" class="col-form-label">Subject:</label>
-              <input type="text" class="form-control" id="subject" name="subject" required>
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Message:</label>
-              <textarea class="form-control" id="message" name="message" required></textarea>
-            </div>
-            <input type="submit" class="btn btn-outline-light" name="Submit" id="submitForm" value="Submit"></input>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div> <!-- End of Contact Modal -->
   
   <!-- Footer -->
   <footer>
@@ -150,60 +186,5 @@
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
   <script src="js/effect.js"></script>
-
-    <!-- Start jQuery code -->
-    <script type="text/javascript">
-      $("#contactForm").submit(function(event){
-        event.preventDefault(); //prevent default action 
-        var proceed = true;
-        var form = this;
-        
-        //simple validation at client's end
-        //loop through each field and we simply change border color to red for invalid fields		
-        $(form).find(':required').each(function(){
-          $(this).css('border-color',''); 
-          if(!$.trim($(this).val())){ //if this field is empty 
-            $(this).css('border-color','red'); //change border color to red   
-            proceed = false; //set do not proceed flag
-          }
-          //check invalid email
-          var email_reg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; 
-          if($(this).attr("type")=="email" && !email_reg.test($.trim($(this).val()))){
-            $(this).css('border-color','red'); //change border color to red   
-            proceed = false; //set do not proceed flag				
-          }	
-      
-        }).keyup(function() { //reset previously set border colors on .keyup()
-          $(this).css('border-color',''); 
-        }).change(function() {  //for select box
-          $(this).css('border-color',''); 
-        });
-        
-        if(proceed){ //everything looks good! proceed...
-          //get input field values data to be sent to server
-          var post_url = $(this).attr("action"); //get form action url
-          var request_method = $(this).attr("method"); //get form GET/POST method
-          var form_data = $(this).serialize(); //Encode form elements for submission
-          
-          //Ajax post data to server
-          $.ajax({
-            url : post_url,
-            type: request_method,
-            dataType : 'json',
-            data : form_data
-          })
-          .done(function(response){ 
-            if(response.type == 'error'){ //load json data from server and output message     
-              output = '<div class="error">'+response.text+'</div>';
-            }else{
-              $(form)[0].reset(); //reset this form upon success
-              output = '<div class="success">'+response.text+'</div>';
-            }
-            $("#contact_form #contact_results").html(output);
-          });
-        }
-      });
-      </script>
 </body>
-
 </html>
