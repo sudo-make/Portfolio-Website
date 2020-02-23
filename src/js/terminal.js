@@ -1,8 +1,7 @@
-// Show the about modal when ./about.sh is typed
-
 var lsClicked = false;
 var whoisClicked = false;
 var contactClicked = false;
+
 // add keyEvent listener when window fully loads
 window.onload=function() {
     document.getElementById('terminal-input').addEventListener("keydown", function (e) {
@@ -12,6 +11,7 @@ window.onload=function() {
     });   
 }
 
+// Handle of all the input from the terminal
 function input() {
     var terminal_input = $('#terminal-input').val().toLowerCase().trim(); // Get the terminal input
 

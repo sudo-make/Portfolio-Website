@@ -1,7 +1,7 @@
 /**
   Author: Callum-James Smith (Sudo-Make)
   Date Created: 21-02-2020
-  Last Updated: 21-02-2020
+  Last Updated: 23-02-2020
 */
 @font-face {
   font-family: 'Nintendoid1';
@@ -109,47 +109,47 @@ html, body {
 
 @keyframes flicker {
   0% {
-    opacity: 0.63983; }
+    opacity: 0.05721; }
   5% {
-    opacity: 0.41858; }
+    opacity: 0.98268; }
   10% {
-    opacity: 0.86132; }
+    opacity: 0.04604; }
   15% {
-    opacity: 0.30819; }
+    opacity: 0.77386; }
   20% {
-    opacity: 0.09989; }
+    opacity: 0.39959; }
   25% {
-    opacity: 0.03808; }
+    opacity: 0.56897; }
   30% {
-    opacity: 0.36992; }
+    opacity: 0.60018; }
   35% {
-    opacity: 0.98632; }
+    opacity: 0.52253; }
   40% {
-    opacity: 0.59583; }
+    opacity: 0.85789; }
   45% {
-    opacity: 0.22158; }
+    opacity: 0.70696; }
   50% {
-    opacity: 0.482; }
+    opacity: 0.71695; }
   55% {
-    opacity: 0.50499; }
+    opacity: 0.78499; }
   60% {
-    opacity: 0.57248; }
+    opacity: 0.88561; }
   65% {
-    opacity: 0.12843; }
+    opacity: 0.51832; }
   70% {
-    opacity: 0.13319; }
+    opacity: 0.63174; }
   75% {
-    opacity: 0.71197; }
+    opacity: 0.31796; }
   80% {
-    opacity: 0.01143; }
+    opacity: 0.70614; }
   85% {
-    opacity: 0.82241; }
+    opacity: 0.83756; }
   90% {
-    opacity: 0.2112; }
+    opacity: 0.46912; }
   95% {
-    opacity: 0.91667; }
+    opacity: 0.19603; }
   100% {
-    opacity: 0.84137; } }
+    opacity: 0.67777; } }
 
 .crt {
   background: #121010;
