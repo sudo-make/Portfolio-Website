@@ -50,6 +50,47 @@ html, body {
     animation-direction: alternate;
 }
 
+// Custom retro scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* button */
+::-webkit-scrollbar-button {
+  background: rgb(211, 211, 211);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(211, 211, 211); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(245, 245, 245);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+/* The track NOT covered by the handle.
+::-webkit-scrollbar-track-piece {
+  background: #000; 
+}
+
+/* Corner */
+::-webkit-scrollbar-corner {
+  background: transparent; 
+}
+
+/* Resizer */
+::-webkit-resizer {
+  background: transparent; 
+}
+
 @keyframes textflicker {
   from {
     text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
@@ -106,31 +147,6 @@ html, body {
     height: 100% !important;
 }
 
-.navigation-links {
-    margin-right: 50px;
-    padding: 8px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
-
-.navigation-links:hover {
-    border-bottom: 2px solid $primary-txt-color;
-}
-
-.navbar-nav .active{
-    color: $primary-txt-color;
-    border-bottom: 2px solid $primary-txt-color !important;
-}
-
-.nav-tabs, .card-header {
-    background: white;
-}
-
-.nav-link {
-    background: none;
-    color: $primary-txt-color !important;
-    border-radius: 0px;
-}
-
 .card-about {
     height: auto;
     border: none !important;
@@ -148,10 +164,10 @@ html, body {
 }
 .crt {
   background:$screen-background;
+  min-height: 80%;
   width:auto;
-  height:auto;
-  margin-right: 15px;
-  margin-left: 15px;
+  height: auto;
+  padding: 10px;
   position:relative;
   overflow:scroll;
   border:2px solid #666;
@@ -187,20 +203,6 @@ html, body {
 }
 .crt::after{
   animation:flicker 0.15s infinite;
-}
-
-// custom scrollbar
-.crt::-webkit-scrollbar {
-  display: none;
-}
-.crt::-webkit-scrollbar-track {
-  display: none;
-}
-.crt::-webkit-scrollbar-thumb {
-  display: none;
-}
-.crt::-webkit-scrollbar-thumb:hover {
-  display: none;
 }
 
 @keyframes turn-on{
@@ -261,7 +263,6 @@ html, body {
 }
 .screen{
   width:auto;
-  height:auto;
   border:none;
 }
 .crt>.screen{
@@ -304,10 +305,9 @@ html, body {
 
 .home-page {
     background: $index-bg-color;
-    background-size: cover;
-    background-position: center;
     color: $primary-txt-color;
     width: auto;
+    min-height: 70vh !important;
     height: auto;
 }
 
@@ -328,10 +328,9 @@ h1.text-muted {
 }
 
 .terminal-input-container {
-    width: auto;
+    width: 100%;
     height: auto;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 15px;
 }
 
 #ls-projects {
@@ -351,6 +350,14 @@ h1.text-muted {
     width: 500px;
 }
 
+#terminal-pass {
+  border: none transparent;
+  outline: none;
+  color: $primary-txt-color;
+  background: transparent;
+  width: 500px;
+}
+
 // About modal
 .modal {
     background: rgba(17, 17, 17, 0.253);
@@ -367,6 +374,13 @@ h1.text-muted {
     transition: opacity 300ms ease-in-out 1ms,visibility 1ms linear 302ms;
     width: auto;
     opacity: 1;
+}
+
+.nav-link {
+  color: $primary-txt-color;
+}
+.nav-link:hover {
+  color: white;
 }
 
 .close {
@@ -459,18 +473,6 @@ ul.timeline > li:before {
     z-index: 400;
 }
 
-// Posts page
-.posts-page {
-    max-width: 1000px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.bg-white > a,
-.navbar-nav > li > a {
-    color: set-text-color(white);
-}
-
 .card {
     max-width: 1000px;
     width: 100%;
@@ -479,22 +481,6 @@ ul.timeline > li:before {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-// Yoga page
-.yoga-page {
-    background: $yoga-bg-image;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.yoga-about {
-    height: 35vh;
-    text-align: left;
-    margin: 0 auto;
-    display: table;
-    width: 75%;
 }
 
 .about-card {
@@ -506,39 +492,13 @@ ul.timeline > li:before {
     width: 100%;
 }
 
-.yoga-teaching {
-    height: 35vh;
-    text-align: center;
-    border: none;
-    box-shadow: none;
-}
-
-.teaching-card {
-    margin: 0 auto;
-    display: block;
-    border: none;
-    box-shadow: none;
-}
-
 .img-round {
     border-radius: 180px;
     width: 180px;
 }
 
-@media (max-width: 1038px) {
-    .home-page {
-        background: white;
-    }
-    .home-featured {
-        margin: 0 auto !important;
-        display: block;
-        float: none !important;
-    }
-    .yoga-page {
-        height: auto;
-    }
-}
-
 footer {
   background-color: $index-bg-color;
+  height: auto;
+  margin-top: 20px;
 }
