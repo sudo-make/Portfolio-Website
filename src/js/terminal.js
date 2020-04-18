@@ -86,7 +86,7 @@ function whois() {
     if (!whoisClicked) {
         $('#output').append("<h3 class='terminal-out'>Hey!</h3>");
         $('#output').append("<p class='terminal-out'>My name is Callum-James Smith; I am a 2nd year student at the university of essex; studying computer science.</p>");
-        $('#output').append('<p class="terminal-out">I make <i class="terminal-out fa fa-gamepad" aria-hidden="true"></i> games, create websites, and mess around with <i class="terminal-out fa fa-linux" aria-hidden="true"></i> Linux.</p>')
+        $('#output').append('<p class="terminal-out">I make <i class="terminal-out fa fa-gamepad" aria-hidden="true"></i> games, create websites, and mess around with <i class="terminal-out fa fa-linux" aria-hidden="true"></i> Linux.</p><p class="small">I also love dragons <i class="fas fa-dragon"></i>')
         $('#output').append('<h3 class="terminal-out">My education:</h3><br>')
         var lOutput = `<div class="terminal-out">
                         <ul class="terminal-out timeline">
@@ -94,9 +94,11 @@ function whois() {
                             <p>Student</p>
                             <p>University of Essex</p>
                             <p>Oct 2018 - Present</p>
+                            <p>I learnt and am still learning a lot at university; successfully completing a number of projects including a team project.</p>
                             <p><strong>Modules include:</strong></p>
                             <ul>
                                 <li>Team Project</li>
+                                <p class="small">This module involved the development of a product as part of a agile team. The project was to create an application that read data from a CSV file, and then would display loads of data pertaining to the module marks for particular students.</p>
                                 <li>Introduction to programming (Python)</li>
                                 <li>Mathematics for computing</li>
                                 <li>Object-oriented programming (Java)</li>
