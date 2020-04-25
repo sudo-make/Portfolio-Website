@@ -1,22 +1,23 @@
 {
-  "name": "hci-assignment-2",
-  "version": "1.0.0",
-  "description": "A website created as part of HCI module; using bootstrap, gulp and sass.",
+  "name": "portfolio-website",
+  "version": "2.1.0",
+  "description": "My personal portfolio website made using JQuery, SASS, and HTML5.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/techdragongames/hci-assignment-2.git"
+    "url": "git@github.com:sudo-make/Portfolio-Website.git"
   },
   "keywords": [
-    "HCI",
-    "website"
+    "Portfolio",
+    "Website",
+    "sudo-make"
   ],
-  "author": "Callum-James Smith (1806094)",
+  "author": "Callum-James Smith",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/techdragongames/hci-assignment-2#readme",
+  "homepage": "https://sudo-make.co.uk/",
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
