@@ -14,7 +14,7 @@ $ npm install
 ```
 You will also need to run:
 ```bash
-$ npm install gulp -g
+$ npm install gulp gulp-sass -g
 ```
 
 To start browser sync & start compiling the sass run:
