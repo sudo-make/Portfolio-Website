@@ -4,13 +4,13 @@
   Last Updated: 21-02-2020
 */
 $index-bg-color: rgb(28, 31, 39);
-$primary-color: rgb(17, 17, 17); // The colour of most elements
-$nav-bg-color: rgb(37, 37, 37); // Navigation background colour when made sticky
-$primary-txt-color: rgb(233, 233, 233); // Text colour for *most* text
-$alt-txt-color: rgb(24, 24, 24); // Alt text colour (for things like modals etc.
+$primary-color: rgba(44, 44, 44, 0.8);
+$nav-bg-color: rgb(37, 37, 37);
+$primary-txt-color: rgb(233, 233, 233);
+$alt-txt-color: rgb(37, 41, 43);
 $hover-color: #007bff;
 // Image obtained from: https://www.pexels.com
-$hero-bg-image: url(../images/index_bg.jpg);
+$hero-bg-image: url(../images/home-bg-image.jpg);
 $yoga-bg-image: url(../images/yoga-bg-image.jpg);
 
 // Set text color
@@ -139,7 +139,7 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
 
 // About modal
 .modal {
-    background: rgba(17, 17, 17, 0.253);
+    background: rgba(17, 17, 17, 0.8);
     cursor: crosshair;
     height: 100vh;
     position: absolute;
@@ -245,6 +245,12 @@ ul.timeline > li:before {
     z-index: 400;
 }
 
+// Footer
+footer {
+    width: 100vw;
+    height: auto;
+}
+
 // Posts page
 .posts-page {
     max-width: 1000px;
@@ -267,45 +273,6 @@ ul.timeline > li:before {
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-// Yoga page
-.yoga-page {
-    background: $yoga-bg-image;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.yoga-about {
-    height: 35vh;
-    text-align: left;
-    margin: 0 auto;
-    display: table;
-    width: 75%;
-}
-
-.about-card {
-    border: none;
-    background: transparent;
-    box-shadow: none;
-    vertical-align: middle;
-    display: table-cell;
-    width: 100%;
-}
-
-.yoga-teaching {
-    height: 35vh;
-    text-align: center;
-    border: none;
-    box-shadow: none;
-}
-
-.teaching-card {
-    margin: 0 auto;
-    display: block;
-    border: none;
-    box-shadow: none;
-}
-
 .img-round {
     border-radius: 180px;
     width: 180px;
@@ -313,14 +280,11 @@ ul.timeline > li:before {
 
 @media (max-width: 1038px) {
     .home-page {
-        background: white;
+        background: $index-bg-color;
     }
     .home-featured {
         margin: 0 auto !important;
         display: block;
         float: none !important;
-    }
-    .yoga-page {
-        height: auto;
     }
 }
