@@ -65,13 +65,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		if(!$send_mail)
 		{
 			//If mail couldn't be sent output error. Check your PHP email configuration (if it ever happens)
-			$output = json_encode(array('type'=>'error', 'text' => 'Could not send mail! Please check your PHP mail configuration.'));
-			die($output);
+			// Set a 500 (internal server error) response code.
+            http_response_code(500);
+            echo "Oops! Something went wrong and we couldn't send your message.";
 		}else{
-			$output = json_encode(array('type'=>'message', 'text' => 'Thank you for your email'));
-			die($output);
+			http_response_code(200);
+			echo "Thank You! Your message has been sent.";
 		}
 	}
-	echo("There Was an Error :(");
 }
 ?>

@@ -147,7 +147,7 @@
           </button>
         </div>
         <div class="modal-body" id="contact_body">
-          <div id="contact_results"></div>
+          <div id="contact_results" class="alert-danger"></div>
           <form id="contact_form" method="post" action="contact.php">
             <div class="form-group">
               <label for="from-email" class="col-form-label">Your email:</label>
