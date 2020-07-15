@@ -10,10 +10,11 @@
   <title>$ ls ~/ | Callum-James Smith</title>
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- include Google hosted jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <!-- Obtained from https://www.jqueryscript.net/menu/Highlight-Nav-Bootstrap-jQuery-Dynamic-Menu.html -->
   <script src="js/dynamic-menu.js"></script>
-  
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800" />
   <!-- Below is the API for Fontawesome, this provides some icons that allow for quicker load times and better responsiveness -->
   <script src="https://kit.fontawesome.com/6598dc23bc.js" crossorigin="anonymous"></script>
@@ -21,12 +22,19 @@
   <link rel="stylesheet" href="css/bootstrap.css" />
   <!-- This css file overrides the defaults set by bootstrap -->
   <link rel="stylesheet" href="css/main.css" />
+
+  <!-- reCaptcha3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lc0X7EZAAAAABJW8qMCa-6YUCx6kk-gegiCEePu"></script>
 </head>
 
 <body>
-
-  <!-- Image that holds the start of terminal -->
-
+  <?php
+  if (isset($_GET['contact'])) {
+    if ($_GET['contact'] == "success") {
+      echo ("<div class='alert alert-success'>Thanks for contacting</div>");
+    }
+  }
+  ?>
   <!-- Navigation bar/header -->
   <div class="container-fluid home-page">
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -63,17 +71,15 @@
         <p class="lead">Student <i class="fa fa-university" aria-hidden="true"></i> and Game Developer <i class="fa fa-gamepad" aria-hidden="true"></i></p>
         <div class="btn-group" role="group" aria-label="Social media links">
           <button type="button" class="btn btn-light btn-social">
-            <a class="text-dark" href="https://www.linkedin.com/in/callum-james-smith/" aria-label="External link to my LinkedIn"><i class="fa fa-linkedin"
-                aria-hidden="true"></i></a>
+            <a class="text-dark" href="https://www.linkedin.com/in/callum-james-smith/" aria-label="External link to my LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
           </button>
           <button type="button" class="btn btn-light btn-social">
-            <a class="text-dark" href="https://github.com/sudo-make" aria-label="External link to my GitHub page"><i class="fa fa-github"
-                aria-hidden="true"></i></a>
+            <a class="text-dark" href="https://github.com/sudo-make" aria-label="External link to my GitHub page"><i class="fa fa-github" aria-hidden="true"></i></a>
           </button>
         </div>
       </div>
     </div>
-    
+
     <div class="card mb-3 home-featured" style="max-width: 500px; float: right; margin: 8px; width: auto;">
       <div class="row no-gutters">
         <div class="col-md-8">
@@ -90,8 +96,7 @@
   </div> <!-- End of page container-->
 
   <!-- About Modal -->
-  <div class="modal fade" id="aboutModal" tabindex="0" role="dialog" aria-labelledby="aboutModalTitle"
-    aria-hidden="true">
+  <div class="modal fade" id="aboutModal" tabindex="0" role="dialog" aria-labelledby="aboutModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -108,77 +113,19 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">Hi!</h5>
-                  <p class="card-text">2nd year student at the university of essex and game developer.</p>
+                  <h5 class="card-title">Hey!</h5>
+                  <p class="card-text">3rd year student at the university of essex and game developer.</p>
                   <p class="small">I also love dragons! <i class="fas fa-dragon"></i></p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card text-center card-about">
-            <div class="card-header">
-              <ul class="nav nav-tabs card-header-tabs" id="tabs" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active" style="color: black;" id="general-tab" data-toggle="tab" href="#general" role="tab"
-                    aria-controls="general" aria-selected="true">General</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="achievements-tab" data-toggle="tab" href="#achievements" role="tab"
-                    aria-controls="achievements" aria-selected="false">Achievements</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="employment-tab" data-toggle="tab" href="#employment" role="tab"
-                    aria-controls="employment" aria-selected="false">Employment</a>
-                </li>
-              </ul>
-            </div>
-            <!-- The card bodies, these are shown when user clicks on corresponding tab -->
-            <div class="card-body">
-              <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
-                  I am an operating partner at Khosla Ventures, working with portfolio companies to make their design
-                  and UX great. I build high performing teams, establish design practices, mentor and grow the next
-                  generation of great designers, and design interfaces and experiences. I drive strategic discussions at
-                  the highest levels of companies, focusing first on user needs to inspire product innovation.
-                </div>
-                <div class="tab-pane fade" id="speaking-schedule" role="tabpanel"
-                  aria-labelledby="speaking-schedule-tab">
-                  <p class="small font-italic">No upcoming events</p>
-                </div>
-                <div class="tab-pane fade achievements-tab" id="achievements" role="tabpanel" aria-labelledby="achievements-tab">
-                  <p class="font-weight-bold">Carolina Scholars Award</p>
-                  <p class="text-body font-weight-normal">University of South Carolina
-                  Full scholarship to the University of South Carolina Honors College
-                  Full scholarship to the University of South Carolina Honors College</p>
-
-                  <p class="font-weight-bold">Palmetto Fellows Award</p>
-                  <p class="text-body font-weight-normal">State of South Carolina
-                  Full scholarship to attend any state university in South Carolina
-                  Full scholarship to attend any state university in South Carolina</p>
-                </div>
-                  <div class="tab-pane fade" id="employment" role="tabpanel" aria-labelledby="employment-tab">
-                    <div class="container-fluid mt-5 mb-5">
-                      <div class="row">
-                        <div class="col-md-10 offset-md-1">
-                          <ul class="timeline">
-                            <li>
-                              <p>Advisory Board Member</p>
-                              <p>GROUP OF HUMANS</p>
-                              <p>Aug 2019 - Present</p>
-                            </li>
-                            <li>
-                              <p>Yoga Teacher</p>
-                              <p>Avalon Yoga International</p>
-                              <p>Feb 2012 - Present</p>
-                            </li>
-                            <li>
-                              <p>Strategic and Editorial Board Member</p>
-                              <p>Rosenfeld Media</p>
-                              <p>2010 - 2018</p>
-                              <p>Rosenfeld Media is the premier publisher of UX books. As an editorial board member, I help guide decisions around what should get published, which authors get support, and what topics are relevant and germaine to UX practitioners. As strategic board member, I help broker valuable connections to Rosenfeld Media with other industry executives and consultants, and advise on future direction and opportunities.</p>
-                            </li>
-                        </ul>
-                      </div>
-                    </div>
+            <div class="card text-center card-about">
+              <!-- The card bodies, these are shown when user clicks on corresponding tab -->
+              <div class="card-body">
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+                    My name is Callum-James Smith; I am a 3rd year student at the university of essex; studying computer science.
+                    I make games, create websites, and mess around with linux.
                   </div>
                 </div>
               </div> <!-- End of content in tabbed pane -->
@@ -190,8 +137,7 @@
   </div><!-- End of About Modal -->
 
   <!-- Contact Modal -->
-  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalTitle"
-    aria-hidden="true">
+  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -200,30 +146,44 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <form>
+        <div class="modal-body" id="contact_body">
+          <div id="contact_results"></div>
+          <form id="contact_form" method="post" action="contact.php">
             <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Recipient:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label for="from-email" class="col-form-label">Your email:</label>
+              <input type="email" class="form-control" id="user_email" name="user_email" required="true">
+            </div>
+            <div class="form-group">
+              <label for="subject" class="col-form-label">Subject:</label>
+              <input type="text" class="form-control" id="subject" name="subject" required="true">
             </div>
             <div class="form-group">
               <label for="message-text" class="col-form-label">Message:</label>
-              <textarea class="form-control" id="message-text"></textarea>
+              <textarea class="form-control" id="message" name="message" required="true"></textarea>
             </div>
+            <button type="submit" class="btn btn-light">Send</button>
+            <input type="hidden" id="token" name="token">
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-dark" data-dismiss="modal">Send message</button>
+          <!-- Start jQuery code -->
+          <script>
+            grecaptcha.ready(function() {
+              grecaptcha.execute('6Lc0X7EZAAAAABJW8qMCa-6YUCx6kk-gegiCEePu', {
+                action: 'homepage'
+              }).then(function(token) {
+                document.getElementById('token').value = token;
+              });
+            });
+          </script>
         </div>
       </div>
     </div>
   </div> <!-- End of Contact Modal -->
 
   <script src="js/jquery.min.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script> <!-- Bootstrap Javascript stuff, animations etc. -->
-  
+
   <!-- Cool background effect -->
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
