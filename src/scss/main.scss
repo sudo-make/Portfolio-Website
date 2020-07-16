@@ -1,7 +1,7 @@
 /**
   Author: Callum-James Smith (Sudo-Make)
   Date Created: 21-02-2020
-  Last Updated: 21-02-2020
+  Last Updated: 17-07-2020
 */
 $index-bg-color: rgb(28, 31, 39);
 $primary-color: rgb(255, 255, 255);
@@ -9,9 +9,6 @@ $nav-bg-color: rgb(37, 37, 37);
 $primary-txt-color: rgb(233, 233, 233);
 $alt-txt-color: rgb(37, 41, 43);
 $hover-color: #007bff;
-// Image obtained from: https://www.pexels.com
-$hero-bg-image: url(../images/home-bg-image.jpg);
-$yoga-bg-image: url(../images/yoga-bg-image.jpg);
 
 // Set text color
 @function set-text-color($color) {
@@ -93,6 +90,13 @@ ul {
     color: $primary-txt-color;
 }
 
+.fa-github {
+  color: rgb(26, 26, 26);
+}
+.fa-linkedin {
+  color: rgb(30, 129, 196);
+}
+
 .fa:hover {
     transition: ease-in 0.3s;
     color: $hover-color;
@@ -107,7 +111,7 @@ ul {
 .navigation-links {
     margin-right: 50px;
     padding: 8px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Raleway', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .navigation-links:hover {
@@ -371,7 +375,7 @@ ul {
     background-size: cover;
     background-position: center;
     color: $primary-txt-color;
-
+    font-family: 'Raleway', 'Helvetica', 'Lucida Sans';
     height: 100vh !important;
     width: 100% !important;
 }

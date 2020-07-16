@@ -1,11 +1,29 @@
 <!-- 
   Author: Callum-James Smith (sudo-make)
   Date Created: 20-11-2019
-  Last Updated: 17-04-2020
+  Last Updated: 16-07-2020
  -->
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-
+<!-- 
+                                                         ____________
+                                 (`-..________....---''  ____..._.-`
+                                  \\`._______.._,.---'''     ,'
+                                  ; )`.      __..-'`-.      /
+                                 / /     _.-' _,.;;._ `-._,'
+                                / /   ,-' _.-'  //   ``--._``._
+                              ,','_.-' ,-' _.- (( =-    -. `-._`-._____
+                            ,;.''__..-'   _..--.\\.--'````--.._``-.`-._`.
+             _          |\,' .-''        ```-'`---'`-...__,._  ``-.`-.`-.`.
+  _     _.-,'(__)\__)\-'' `     ___  .          `     \      `--._
+,',)---' /|)          `     `      ``-.   `     /     /     `     `-.
+\_____--.  '`  `               __..-.  \     . (   < _...-----..._   `.
+ \_,--..__. \\ .-`.\----'';``,..-.__ \  \      ,`_. `.,-'`--'`---''`.  )
+           `.\`.\  `_.-..' ,'   _,-..'  /..,-''(, ,' ; ( _______`___..'__
+                   ((,(,__(    ((,(,__,'  ``'-- `'`.(\  `.,..______   SSt
+                                                      ``--------..._``--.__
+                                                      Here be dragons.....
+ -->
 <head>
   <title>$ ls ~/ | Callum-James Smith</title>
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -130,7 +148,7 @@
           </div>
           <div class="folder-item__details">
             <div class="folder-item__details__name">
-              Micro RPG
+              <a href="https://github.com/sudo-make/micro-rpg">Micro RPG</a>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ecc31c" stroke-widt class="feather feather-star">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
               </svg>
@@ -146,7 +164,7 @@
           </div>
           <div class="folder-item__details">
             <div class="folder-item__details__name">
-              Nihil
+              <a href="https://github.com/sudo-make/Nihil---Game">Nihil</a>
             </div>
             <div class="folder-item__details__date">
               A 3D horror game made using Unity3D
@@ -256,7 +274,7 @@
           </div>
           <div class="folder-item__details">
             <div class="folder-item__details__name">
-              Global Game Jam 2019
+              <a href="https://github.com/sudo-make/Global-Game-Jam-2019---Memories">Global Game Jam 2019</a>
             </div>
             <div class="folder-item__details__date">
               My submission to the 2019 Global Game Jam event. This was also make in Unity3D; and was a team effort.
@@ -277,7 +295,7 @@
           </div>
           <div class="folder-item__details">
             <div class="folder-item__details__name">
-              2D Java "Bejeweled" clone
+              <a href="https://github.com/sudo-make/Java-Game-CE203-A2-">2D Java "Bejeweled" clone</a>
             </div>
             <div class="folder-item__details__date">
               This is a 2D game made using Java swing; as part of an assignment in my 2nd year at university.
@@ -302,14 +320,10 @@
                 <g>
                   <polygon fill="#E34E26" points="107.125,470.727 74.012,99.297 437.703,99.297 404.549,470.755 255.769,512 		" />
                   <polygon fill="#EF662A" points="255.857,129.657 255.857,480.449 376.164,447.101 404.51,129.657 		" />
-                  <polygon fill="#FFFFFF" points="141.761,175.217 154.041,312.978 311.936,312.978 306.637,372.066 255.799,385.811 
-			205.057,372.085 201.664,334.146 155.937,334.146 162.476,407.282 255.787,433.199 349.219,407.282 361.744,267.429 
-			195.706,267.429 191.538,220.777 365.732,220.777 365.873,220.777 369.953,175.217 		" />
+                  <polygon fill="#FFFFFF" points="141.761,175.217 154.041,312.978 311.936,312.978 306.637,372.066 255.799,385.811 205.057,372.085 201.664,334.146 155.937,334.146 162.476,407.282 255.787 433.199 349.219,407.282 361.744,267.429 195.706,267.429 191.538,220.777 365.732,220.777 365.873,220.777 369.953,175.217 		" />
                   <g>
-                    <polygon fill="#EBEBEB" points="255.857,175.217 141.761,175.217 154.041,312.978 255.857,312.978 255.857,267.429 
-				195.706,267.429 191.538,220.777 255.857,220.777 			" />
-                    <polygon fill="#EBEBEB" points="255.857,385.791 255.799,385.811 205.057,372.085 201.664,334.146 155.937,334.146 
-				162.476,407.282 255.787,433.199 255.857,433.179 			" />
+                    <polygon fill="#EBEBEB" points="255.857,175.217 141.761,175.217 154.041,312.978 255.857,312.978 255.857,267.429 195.706,267.429 191.538,220.777 255.857,220.777 			" />
+                    <polygon fill="#EBEBEB" points="255.857,385.791 255.799,385.811 205.057,372.085 201.664,334.146 155.937,334.146 162.476,407.282 255.787,433.199 255.857,433.179 			" />
                   </g>
                 </g>
               </g>
@@ -317,7 +331,7 @@
           </div>
           <div class="folder-item__details">
             <div class="folder-item__details__name">
-              Portfolio Website
+              <a href="https://github.com/sudo-make/Portfolio-Website">Portfolio Website</a>
             </div>
             <div class="folder-item__details__date">
               If your seeing this; then you already know all about it :) This website was created using Bootstrap, JQuery, SCSS, PHP and HTML5
