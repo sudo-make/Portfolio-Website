@@ -4,7 +4,7 @@
   Last Updated: 21-02-2020
 */
 $index-bg-color: rgb(28, 31, 39);
-$primary-color: rgba(44, 44, 44, 0.8);
+$primary-color: rgb(255, 255, 255);
 $nav-bg-color: rgb(37, 37, 37);
 $primary-txt-color: rgb(233, 233, 233);
 $alt-txt-color: rgb(37, 41, 43);
@@ -27,6 +27,10 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(32, 32, 32, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); 
 }
 
+ul {
+    padding-inline-start: 0 !important;
+}
+
 .bg-primary {
     background-color: transparent !important;
 }
@@ -44,13 +48,44 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
 .btn-social {
     padding: auto;
     width: 60px;
-    background-color: transparent;
+    background-color: $primary-color;
     border: none;
-    text-align: left;
+    margin: 8px;
+    border-radius: 10px;
+    text-align: center;
     font-size: 1.4em;
+    transition: 0.3s;
 }
+
+.btn-social span {
+    font-size:14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    bottom: 0;
+    left: 47px;
+    line-height: 38px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 0;
+    
+    /* CSS3 Transition: */
+    -webkit-transition: 0.50s;
+    /* Future proofing (these do not work yet): */
+    -moz-transition: 0.50s;
+    transition: 0.50s;  
+}
+
 .btn-social:hover {
-    background-color: transparent;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.btn-social:hover span {
+  width:auto; padding:0 30px; overflow:visible;
+  position: fixed;
 }
 
 .fa {
@@ -100,6 +135,229 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
     box-shadow: none !important;
 }
 
+// Projects List
+// ------- FOLDER
+
+.folder {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    width: auto;
+    margin: 0 auto;
+    max-width: 450px;
+  }
+  
+  // ------ SHARED USER
+  
+  .shared-user {
+    align-items: center;
+    color: #6a696a;
+    display: inline-flex;
+    font-weight: 500;
+    margin-left: 5px;
+    outline: none;
+    text-decoration: none;
+  
+    &__avatar {
+      width: 15px;
+      height: 15px;
+      margin-right: 3px;
+    }
+  }
+  
+  // ------- FOLDER SUMMARY
+  
+  .folder-summary {
+    padding: 15px 20px 15px 15px;
+    cursor: pointer;
+    display: flex;
+    line-height: 1;
+    height: 80px;
+    position: relative;
+  
+    &__start {
+      position: relative;
+    }
+  
+    &__file-count {
+      position: absolute;
+      top: -3px;
+  
+      &__amount {
+        color: #ffffff;
+        font-size: 12px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+  
+      svg {
+        color: #5166fa;
+        height: 30px;
+        width: auto;
+      }
+    }
+  
+    &__details {
+      padding: 2px 0 0 13px;
+  
+      &__name {
+        color: #393738;
+        font-size: 20px;
+        font-weight: 500;
+      }
+  
+      &__share {
+        align-items: center;
+        color: #b5b4b5;
+        display: flex;
+        font-size: 15px;
+        margin-top: 8px;
+      }
+    }
+  
+    &__end {
+      margin-left: auto;
+  
+      svg {
+        fill: #c3c2c3;
+      }
+    }
+  
+    &::after {
+      background: #e6e6e6;
+      bottom: -2px;
+      content: "";
+      height: 2px;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+  
+  // ------- CHEVRON BUTTON
+  
+  .folder-collapse-button {
+    appearance: none;
+    background: transparent;
+    border-radius: 30px;
+    border: 0;
+    cursor: pointer;
+    height: 30px;
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    position: relative;
+    width: 30px;
+    z-index: 1;
+  
+    &::after {
+      background: #efeff0;
+      border-radius: 40px;
+      content: "";
+      height: 35px;
+      left: 50%;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.2s ease-out;
+      width: 35px;
+    }
+  
+    &:hover::after {
+      opacity: 1;
+    }
+  
+    svg {
+      color: #9c9c9e;
+      left: 50%;
+      position: absolute;
+      stroke-width: 3;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+  }
+  
+  // ------------ FOLDER ITEM
+  
+  .folder-item {
+    align-items: flex-start;
+    display: flex;
+    height: auto;
+    line-height: 1;
+    opacity: 0;
+    padding: 20px 25px;
+    position: relative;
+  
+    &__icon svg {
+      display: block;
+      height: 40px;
+      width: auto;
+    }
+  
+    &__details {
+      padding: 1px 0 0 15px;
+  
+      &__name {
+        color: #393738;
+        font-size: 17px;
+        font-weight: 500;
+        position: relative;
+  
+        svg {
+          height: auto;
+          position: absolute;
+          top: 50%;
+          transform: translate(5px, calc(-50% + 1px));
+          width: 20px;
+        }
+      }
+  
+      &__date {
+        color: #b5b4b5;
+        font-size: 15px;
+        margin-top: 8px;
+      }
+    }
+  
+    &:not(:last-child)::after {
+      background: #edecee;
+      bottom: 0;
+      content: "";
+      height: 1px;
+      left: 80px;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  .folder-content {
+    height: auto;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  #js_folder-content::-webkit-scrollbar-track
+  {
+    background-color: #F5F5F5;
+  }
+  
+  #js_folder-content::-webkit-scrollbar
+  {
+    width: 10px;
+    background-color: #F5F5F5;
+  }
+  
+  #js_folder-content::-webkit-scrollbar-thumb
+  {
+    background-color: #292929;
+    border-radius: 10px;
+  }
+
 // Home page
 #demo-canvas {
     position: fixed;
@@ -113,6 +371,9 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
     background-size: cover;
     background-position: center;
     color: $primary-txt-color;
+
+    height: 100vh !important;
+    width: 100% !important;
 }
 
 .jumbotron {
@@ -129,17 +390,14 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
     margin-top: 20px;
 }
 
-#terminal-input {
-    background: black;
-    color: $primary-txt-color;
-    border: none;
-    width: auto;
-    height: 100px;
+.home-featured {
+    margin: 0 auto;
+    display: block;
 }
 
 // About modal
 .modal {
-    background: rgba(17, 17, 17, 0.8);
+    background: transparent;
     cursor: crosshair;
     height: 100vh;
     position: absolute;
@@ -165,16 +423,18 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
     color: white;
 }
 
-.modal-dialog-scrollable {
-    background: rgba(17, 17, 17, 0.253);
+.modal-dialog-scrollable, .modal-content {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border: none !important;
     cursor: default;
     float: right;
     max-width: 650px;
-    min-height: 94vh;
+    // min-height: 94vh;
     margin-right: 8px;
     opacity: 1;
-    -webkit-transition: opacity 400ms ease-in-out;
-    transition: opacity 400ms ease-in-out;
     width: 100%;
 }
 @media (max-width: 650px) {
@@ -184,14 +444,9 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
     }
 }
 
-.modal-content {
-    border-radius: 0;
-    background-color: $primary-color;
-    color: set-text-color($primary-color);
-}
-
 .card {
     border-radius: 0;
+    border: none !important;
     background-color: $primary-color;
     color: set-text-color($primary-color) !important;
 }
@@ -211,44 +466,9 @@ $yoga-bg-image: url(../images/yoga-bg-image.jpg);
     color: set-text-color($nav-bg-color) !important;
 }
 
-// Timeline feature of the employment tab
-ul.timeline {
-    list-style-type: none;
-    position: relative;
-    text-align: left;
-}
-ul.timeline:before {
-    content: ' ';
-    background: #d4d9df;
-    display: inline-block;
-    position: absolute;
-    left: 29px;
-    width: 2px;
-    height: 100%;
-    z-index: 400;
-}
-ul.timeline > li {
-    margin: 20px 0;
-    padding-left: 20px;
-}
-// Creates the line and circle effect
-ul.timeline > li:before {
-    content: ' ';
-    background: white;
-    display: inline-block;
-    position: absolute;
-    border-radius: 50%;
-    border: 3px solid rgb(55, 61, 63);
-    left: 20px;
-    width: 20px;
-    height: 20px;
-    z-index: 400;
-}
-
-// Footer
-footer {
-    width: 100vw;
-    height: auto;
+#contactModal {
+    height: auto !important;
+    width: auto !important;
 }
 
 // Posts page
