@@ -3,7 +3,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	$url = "https://www.google.com/recaptcha/api/siteverify";
 	$data = [
-		'secret' => "6Lc0X7EZAAAAAI7LZUfyOcbbA34r2HUS5zVjLPNG",
+		'secret' => "6Lf4YTcaAAAAAOf5EwVL1cfPVqeVwm5WFjWz1uQq",
 		'response' => $_POST['token']
 	];
 	$options = array(
@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	if ($res['success'] == true) {
 
 		$to_email   	= "csmith99@protonmail.com"; //Recipient email, Replace with own email here
-		$from_email     = 'noreply@sudo-make.co.uk'; //from mail, it is mandatory with some hosts and without it mail might end up in spam.
+		$from_email     = 'noreply@callum-jamessmith.com'; //from mail, it is mandatory with some hosts and without it mail might end up in spam.
 
 		//check if its an ajax request, exit if not
 		if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {

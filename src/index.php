@@ -1,7 +1,7 @@
 <!-- 
   Author: Callum-James Smith (sudo-make)
   Date Created: 20-11-2019
-  Last Updated: 16-07-2020
+  Last Updated: 23-01-2021
  -->
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -26,6 +26,7 @@
  -->
 <head>
   <title>$ ls ~/ | Callum-James Smith</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- include Google hosted jQuery Library -->
@@ -42,7 +43,8 @@
   <link rel="stylesheet" href="css/main.css" />
 
   <!-- reCaptcha3 -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6Lc0X7EZAAAAABJW8qMCa-6YUCx6kk-gegiCEePu"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lf4YTcaAAAAACveZh4vo9iQU2OB1-PiWyCsX-cV"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
 </head>
@@ -105,8 +107,8 @@
             </svg>
           </button>
           <div class="folder-summary__file-count" id="js_folder-summary-amount">
-            <span class="folder-summary__file-count__amount">5</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder">
+            <span class="folder-summary__file-count__amount">6</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder">
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
             </svg>
           </div>
@@ -140,6 +142,21 @@
       </div>
 
       <ul class="folder-content" id="js_folder-content">
+        <!-- Capstone Project -->
+        <li class="folder-item js_folder-item">
+          <div class="folder-item__icon">
+            <img src="images/monogame_logo.png" alt="The logo for the MonoGame engine" style="width: 40px; height: 40px;">
+          </div>
+          <div class="folder-item__details">
+            <div class="folder-item__details__name">
+              <a href="https://github.com/sudo-make/Capstone-Project">University Capstone Project</a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ecc31c" stroke-widt class="feather feather-star">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="folder-item__details__date">A 2D A-RPG game being created using MonoGame; for my 3rd year capstone project.</div>
+          </div>
+        </li>
         <!-- Micro RPG -->
         <li class="folder-item js_folder-item">
           <div class="folder-item__icon">
@@ -149,9 +166,6 @@
           <div class="folder-item__details">
             <div class="folder-item__details__name">
               <a href="https://github.com/sudo-make/micro-rpg">Micro RPG</a>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ecc31c" stroke-widt class="feather feather-star">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-              </svg>
             </div>
             <div class="folder-item__details__date">A 2D rougelike game I'm currently working on; again, made using Unity3D. ;)</div>
           </div>
@@ -174,103 +188,7 @@
         <!-- Global Game Jam 2019 -->
         <li class="folder-item js_folder-item">
           <div class="folder-item__icon">
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 535" style="enable-background:new 0 0 1000 535;" xml:space="preserve">
-              <style type="text/css">
-                .st0 {
-                  fill: #252162;
-                }
-
-                .st1 {
-                  fill-rule: evenodd;
-                  clip-rule: evenodd;
-                  fill: #FFFFFF;
-                }
-
-                .st2 {
-                  fill-rule: evenodd;
-                  clip-rule: evenodd;
-                  fill: #22A9E0;
-                }
-
-                .st3 {
-                  fill-rule: evenodd;
-                  clip-rule: evenodd;
-                  fill: #F3EB33;
-                }
-              </style>
-              <g>
-                <path class="st0" d="M66.7,500.9v16.6c0,2.9-0.8,5.1-2.9,7.1c-6.7,6.1-15.5,10-26.3,10C16.8,534.5,0,519.5,0,497
-                  c0-22.6,16.8-37.4,37.6-37.4c10.9,0,18.8,3.8,24.9,9.9c1,0.9,1.5,2.2,1.5,3.6c0,2.8-2.3,5-5.1,5c-1.3,0-2.6-0.5-3.6-1.4
-                  c-4.4-4.4-10.6-7.4-17.7-7.4c-15.1,0-26.4,11.5-26.4,27.8c0,16.2,11.3,27.9,26.4,27.9c8,0,14.9-3.9,18.3-7.2v-13h-19
-                  c-2.6,0-4.8-2.2-4.8-4.9c0-2.6,2.2-4.7,4.8-4.7H61C64.7,495.1,66.7,497.2,66.7,500.9z" />
-                <path class="st0" d="M80.6,527.4v-61.8c0-2.9,2.5-5.4,5.5-5.4c2.9,0,5.3,2.5,5.3,5.4v58H120c2.6,0,4.9,2.1,4.9,4.7
-                  c0,2.7-2.3,4.9-4.9,4.9H86.5C82.7,533.1,80.6,531,80.6,527.4z" />
-                <path class="st0" d="M166.3,459.5c21.6,0,36.5,16,36.5,37.4c0,21.5-14.9,37.4-36.5,37.4s-36.5-16-36.5-37.4
-                  C129.8,475.5,144.7,459.5,166.3,459.5z M166.3,469.2c-15.5,0-25.3,11.8-25.3,27.8c0,15.8,9.8,27.8,25.3,27.8
-                  c15.3,0,25.3-11.9,25.3-27.8C191.6,481,181.6,469.2,166.3,469.2z" />
-                <path class="st0" d="M215.9,527.4v-60.9c0-3.7,2.1-5.8,5.9-5.8h28.1c12.9,0,20.4,7.9,20.4,18.4c0,9.1-6,15.2-12.6,16.6
-                  c7.7,1.2,14,9,14,17.8c0,11.4-7.6,19.5-20.9,19.5h-29C218,533.1,215.9,531,215.9,527.4z M247.8,491.4c7.3,0,11.3-4.6,11.3-10.5
-                  c0-6-4-10.6-11.3-10.6h-21.1v21.2H247.8z M248.3,523.6c7.6,0,12.2-4.3,12.2-11.4c0-6-4.1-11.2-12.2-11.2h-21.6v22.6H248.3z" />
-                <path class="st0" d="M346.4,528.1c0,3-2.5,5.5-5.5,5.5c-2.4,0-4.4-1.5-5.1-3.5l-4.6-12h-35.9l-4.6,12c-0.8,2-2.8,3.5-5.1,3.5
-                  c-3,0-5.5-2.5-5.5-5.5c0-0.7,0.2-1.4,0.4-2.1l23.9-59.8c1.3-3.5,4.8-6.1,8.8-6.1c4.1,0,7.5,2.6,8.9,6.1l23.9,59.8
-                  C346.1,526.6,346.4,527.4,346.4,528.1z M327.6,508.5l-14.4-38.3l-14.3,38.3H327.6z" />
-                <path class="st0" d="M357.4,527.4v-61.8c0-2.9,2.5-5.4,5.5-5.4c2.9,0,5.3,2.5,5.3,5.4v58h28.5c2.6,0,4.9,2.1,4.9,4.7
-                  c0,2.7-2.3,4.9-4.9,4.9h-33.5C359.5,533.1,357.4,531,357.4,527.4z" />
-                <path class="st0" d="M504.8,500.9v16.6c0,2.9-0.8,5.1-2.9,7.1c-6.7,6.1-15.5,10-26.3,10c-20.7,0-37.6-15-37.6-37.6
-                  c0-22.6,16.8-37.4,37.6-37.4c10.9,0,18.8,3.8,24.9,9.9c1,0.9,1.5,2.2,1.5,3.6c0,2.8-2.3,5-5.1,5c-1.3,0-2.6-0.5-3.6-1.4
-                  c-4.4-4.4-10.6-7.4-17.7-7.4c-15.1,0-26.4,11.5-26.4,27.8c0,16.2,11.3,27.9,26.4,27.9c8,0,14.9-3.9,18.3-7.2v-13h-19
-                  c-2.6,0-4.8-2.2-4.8-4.9c0-2.6,2.2-4.7,4.8-4.7h24.1C502.8,495.1,504.8,497.2,504.8,500.9z" />
-                <path class="st0" d="M579.5,528.1c0,3-2.5,5.5-5.5,5.5c-2.4,0-4.4-1.5-5.1-3.5l-4.6-12h-35.9l-4.6,12c-0.8,2-2.8,3.5-5.1,3.5
-                  c-3,0-5.5-2.5-5.5-5.5c0-0.7,0.2-1.4,0.4-2.1l23.9-59.8c1.3-3.5,4.8-6.1,8.8-6.1c4.1,0,7.5,2.6,8.9,6.1l23.9,59.8
-                  C579.3,526.6,579.5,527.4,579.5,528.1z M560.7,508.5l-14.4-38.3L532,508.5H560.7z" />
-                <path class="st0" d="M652.9,528.2v-52.6l-22.8,56c-0.5,1.3-1.6,2.1-2.9,2.1c-1.4,0-2.5-0.8-2.9-2.1l-22.8-56v52.6
-                  c0,2.9-2.4,5.4-5.3,5.4c-3,0-5.5-2.5-5.5-5.4v-59c0-4.9,4-9,9.1-9c3.8,0,7.2,2.3,8.5,5.6l19,47l19-47c1.3-3.4,4.7-5.6,8.5-5.6
-                  c5.1,0,9.1,4.1,9.1,9v59c0,2.9-2.5,5.4-5.5,5.4C655.3,533.6,652.9,531.2,652.9,528.2z" />
-                <path class="st0" d="M679.8,527.4v-60.9c0-3.7,2.1-5.8,5.9-5.8h38.4c2.6,0,4.9,2.2,4.9,4.9c0,2.6-2.3,4.7-4.9,4.7h-33.4v21.2h32.7
-                  c2.6,0,4.9,2.1,4.9,4.7c0,2.7-2.3,4.9-4.9,4.9h-32.7v22.6h33.4c2.6,0,4.9,2.1,4.9,4.7c0,2.7-2.3,4.9-4.9,4.9h-38.4
-                  C681.9,533.1,679.8,531,679.8,527.4z" />
-                <path class="st0" d="M764,525.3c0-2.8,2.2-5,4.9-5c1,0,2,0.3,2.7,0.9c2.6,2.2,5.6,3.6,9.7,3.6c8.4,0,13.6-5.6,13.6-14.1v-45
-                  c0-2.9,2.5-5.4,5.4-5.4c3,0,5.4,2.5,5.4,5.4v45.1c0,16.1-10.2,23.7-23.7,23.7c-6.1,0-11.3-1.5-16-5.2
-                  C764.8,528.3,764,526.9,764,525.3z" />
-                <path class="st0" d="M880.1,528.1c0,3-2.5,5.5-5.5,5.5c-2.4,0-4.4-1.5-5.1-3.5l-4.6-12h-35.9l-4.6,12c-0.8,2-2.8,3.5-5.1,3.5
-                  c-3,0-5.5-2.5-5.5-5.5c0-0.7,0.2-1.4,0.4-2.1l23.9-59.8c1.3-3.5,4.8-6.1,8.8-6.1c4.1,0,7.5,2.6,8.9,6.1l23.9,59.8
-                  C879.8,526.6,880.1,527.4,880.1,528.1z M861.3,508.5l-14.4-38.3l-14.3,38.3H861.3z" />
-                <path class="st0" d="M953.4,528.2v-52.6l-22.8,56c-0.5,1.3-1.6,2.1-2.9,2.1c-1.4,0-2.5-0.8-2.9-2.1l-22.8-56v52.6
-                  c0,2.9-2.4,5.4-5.3,5.4c-3,0-5.5-2.5-5.5-5.4v-59c0-4.9,4-9,9.1-9c3.8,0,7.2,2.3,8.5,5.6l19,47l19-47c1.3-3.4,4.7-5.6,8.5-5.6
-                  c5.1,0,9.1,4.1,9.1,9v59c0,2.9-2.5,5.4-5.5,5.4C955.8,533.6,953.4,531.2,953.4,528.2z" />
-              </g>
-              <g>
-                <path class="st1" d="M681.2,206.6c0,113.3-90.7,202.9-203.9,202.9s-205.1-90.4-205.1-203.7S363.4,0.5,476.6,0.5
-                  S681.2,93.4,681.2,206.6z" />
-                <g>
-                  <path class="st2" d="M294.7,215c-2-19.2-16.4-26.2-18.3-51.9c-2.8,13.5-4.3,27.6-4.3,41.9c0,28.2,5.7,55.1,16.1,79.6
-                    C284.8,253.5,297.4,240.3,294.7,215z" />
-                  <path class="st2" d="M375.9,27c-24.1,13.7-45.2,32.1-62,54.1c38.6-32.6,77.5-28.4,84.4-34.4c8.8-7.7-29.5-10.8-29.5-10.8
-                    S370.3,32,375.9,27z" />
-                  <path class="st2" d="M538.6,388.7c-40.6-20.8-11.1-50.8,0.3-61.9c11.4-11.1,44.6-46.5,17.8-73.9c-26.8-27.4-30.8-57.6-16.4-85.6
-                    c14.4-28,42.7-21.9,58.6-9.2c15.9,12.8,39.1,34.8,50.9,27.8c18.4-11.2-0.5-34.5-0.5-34.5s-0.7,23.6-5.9,23.6
-                    c-5.3,0-6.3-25.1-9.8-27.4c-10-3.7-3.7,18.5-22,8.5c-18.3-10-11.7-33.8-3.4-44.1c8.3-10.3,22.2,5.1,26,8.4
-                    c3.7,3.3,11,7.1,19.2,7.1c5.8,0,18.4,29,25.3,46.1c-15.2-98-99.9-173-202.1-173c-17.5,0-34.5,2.2-50.8,6.4
-                    c6.7-1.2,14.2-2.2,22.6-2.8c69.5-5.6,92.9,12.5,90.7,21.5c-2.2,9-4.7,13.4-13.6,12.5c-8.8-0.9-17.9-4.4-23.4,2.7
-                    c-5.5,7.2-10.9,6.3-16.4,4c-5.5-2.3-9.3-0.5-12.7,4.6c-3.4,5.1-10.7,19.1-16.1,13.8c-5.4-5.3-4.4-2.9-2.7-8.1
-                    c1.7-5.3,8.9-10.8,5.6-11.3c-3.3-0.5-38.2-1.1-61.7,23.7c25.8,0,59.1,4.8,53.6,44.6c-5.5,39.8-38.3,59.3-73.7,89.4
-                    c-35.4,30.1-76.4,97.9-29.8,141.7c-8.9,0.9-17.4-0.1-25.1-3.2c37.5,42.7,92.4,69.6,153.7,69.6c28.3,0,55.3-5.8,79.9-16.2
-                    C550.2,393,544.1,391.5,538.6,388.7z M480.5,70.7c-5.9,10.6-16.2,10-19,8.3c-2.8-1.7-3.8-1.4,4.3-8.6
-                    C473.9,63.2,486.4,60.1,480.5,70.7z" />
-                </g>
-                <path class="st3" d="M711.3,207.6c-12.4-1.9-24.5-1.8-30.2-1.6c0,0.2,0,0.4,0,0.6c0,11.5-1,22.8-2.8,33.8
-                  c5.6-0.5,18.4-1.1,32.9,2.5c65.1,18.7,60.2,97.7-13.3,97.7c-172.8,0-240.3-301.4-401.3-301.4c-68.5,0-123.2,47.6-123.2,99.1
-                  c0,46,29.7,98.3,95.9,109.2l7.4,1.2c-2.5-11.3-4-23-4.5-34.9l-2.9-0.4c-100.5-20-68.6-142.6,25-142.6
-                  c141.7,0,209.8,301.7,405.6,301.7c39.7,0,90.8-23.1,90.8-76.5C790.8,250.4,757.1,215.9,711.3,207.6z" />
-              </g>
-              <g>
-                <path class="st0" d="M987.1,459.5c7.2,0,12.9,5.7,12.9,12.9c0,7.1-5.7,12.9-12.9,12.9c-7.1,0-12.9-5.8-12.9-12.9
-                  C974.3,465.2,980,459.5,987.1,459.5z M987.1,461.3c-6.1,0-11.1,4.9-11.1,11c0,6.1,5,11.1,11.1,11.1c6.1,0,11-5,11-11.1
-                  C998.2,466.2,993.3,461.3,987.1,461.3z M987.3,474h-3.1v5.1c0,0.5-0.4,1-0.9,1c-0.6,0-1-0.4-1-1v-12.8c0-0.7,0.5-1.2,1.2-1.2h4.8
-                  c2.5,0,4.7,1.8,4.7,4.5c0,2.9-2.3,4.1-3.3,4.3l3.2,4.7c0.1,0.2,0.2,0.4,0.2,0.5c0,0.6-0.5,1.1-1.1,1.1c-0.4,0-0.7-0.2-0.9-0.5
-                  L987.3,474z M988.2,466.8h-4.1v5.3h4.1c1.3,0,2.7-1.1,2.7-2.6C990.9,467.9,989.5,466.8,988.2,466.8z" />
-              </g>
-            </svg>
+            <img src="images/GGJ00-RoundLogo-900x900.png" alt="The logo for Global Game Jam" style="width: 40px; height: 40px;">
           </div>
           <div class="folder-item__details">
             <div class="folder-item__details__name">
@@ -284,7 +202,7 @@
         <!-- 2D Java "Bejeweled" clone-->
         <li class="folder-item js_folder-item">
           <div class="folder-item__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1344" height="2500" viewBox="6.527 4.399 290.829 540.906">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="6.527 4.399 290.829 540.906">
               <path d="M285.104 430.945h-2.037v-1.14h5.486v1.14h-2.025v5.688h-1.424v-5.688zm10.942.297h-.032l-2.02 5.393h-.924l-2.006-5.393h-.024v5.393h-1.343v-6.828h1.976l1.86 4.835 1.854-4.835h1.969v6.828h-1.311l.001-5.393z" fill="#e76f00" />
               <path d="M102.681 291.324s-14.178 8.245 10.09 11.035c29.4 3.354 44.426 2.873 76.825-3.259 0 0 8.518 5.341 20.414 9.967-72.63 31.128-164.376-1.803-107.329-17.743M93.806 250.704s-15.902 11.771 8.384 14.283c31.406 3.24 56.208 3.505 99.125-4.759 0 0 5.937 6.018 15.271 9.309-87.815 25.678-185.624 2.025-122.78-18.833" fill="#5382a1" />
               <path d="M168.625 181.799c17.896 20.604-4.701 39.146-4.701 39.146s45.439-23.458 24.571-52.833c-19.491-27.395-34.438-41.005 46.479-87.934.001-.001-127.013 31.721-66.349 101.621" fill="#e76f00" />
@@ -305,7 +223,7 @@
         <!-- Portfolio Website -->
         <li class="folder-item js_folder-item">
           <div class="folder-item__icon">
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
               <g>
                 <g>
                   <g>
@@ -397,7 +315,7 @@
         </div>
         <div class="modal-body" id="contact_body">
           <div id="contact_results" class="alert-danger"></div>
-          <form id="contact_form" method="post" action="contact.php">
+          <form id="contact_form" data-sitekey="6Lf4YTcaAAAAACveZh4vo9iQU2OB1-PiWyCsX-cV" data-callback='onSubmit' data-action='submit' method="post" action="contact.php">
             <div class="form-group">
               <label for="from-email" class="col-form-label">Your email:</label>
               <input type="email" class="form-control" id="user_email" name="user_email" required="true">
@@ -415,13 +333,9 @@
           </form>
           <!-- Start jQuery code -->
           <script>
-            grecaptcha.ready(function() {
-              grecaptcha.execute('6Lc0X7EZAAAAABJW8qMCa-6YUCx6kk-gegiCEePu', {
-                action: 'homepage'
-              }).then(function(token) {
-                document.getElementById('token').value = token;
-              });
-            });
+            function onSubmit(token) {
+              document.getElementById("contact_form").submit();
+            }
           </script>
         </div>
       </div>
