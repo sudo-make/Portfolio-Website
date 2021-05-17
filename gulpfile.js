@@ -1,31 +1,34 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync').create();
-var sass        = require('gulp-sass');
+const bsync = require('browser-sync');
+const gulp = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
+const sass = require('gulp-sass');
 
-// Compile sass into CSS & auto-inject into browsers
-gulp.task('sass', function() {
-    return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'])
-        .pipe(sass())
-        .pipe(gulp.dest("src/css"))
-        .pipe(browserSync.stream());
-});
-
-// Move the javascript files into our /src/js folder
-gulp.task('js', function() {
-    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js', 'node_modules/popper.js/dist/umd/popper.min.js'])
-        .pipe(gulp.dest("src/js"))
-        .pipe(browserSync.stream());
-});
-
-// Static Server + watching scss/html files
-gulp.task('serve', gulp.series('sass', function() {
-
-    browserSync.init({
-        server: "./src"  
+function sync(done) {
+    bsync.init({
+        files: [
+            'src/css/**/*.css',
+            'src/js/**/*.js'
+        ],
+        host: '192.0.0.1',
+        server: './src',
+        port: 8080,
+        reloadDelay: 1000,
+        ghostMode: false,
+        notify: false
     });
+    done();
+}
 
-    gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], gulp.series('sass'));
-    gulp.watch("src/*.html").on('change', browserSync.reload);
-}));
+function styles() {
+    return gulp.src('src/scss/**/*.scss')
+        .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+        .pipe(autoprefixer({ remove: false }))
+        .pipe(gulp.dest('src/css'))
+        .pipe(bsync.stream());
+}
 
-gulp.task('default', gulp.parallel('js','serve'));
+function watchFiles() {
+    gulp.watch('src/scss/**/*.scss', styles);
+}
+
+gulp.task('default', gulp.series(sync, styles, watchFiles));

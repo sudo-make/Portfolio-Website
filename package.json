@@ -1,14 +1,14 @@
 {
   "name": "portfolio-website",
-  "version": "2.1.0",
   "description": "My personal portfolio website made using JQuery, SASS, and HTML5.",
+  "version": "2.1.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:sudo-make/Portfolio-Website.git"
+    "url": "git+ssh://git@github.com/sudo-make/Portfolio-Website.git"
   },
   "keywords": [
     "Portfolio",
@@ -17,15 +17,21 @@
   ],
   "author": "Callum-James Smith",
   "license": "MIT",
-  "homepage": "https://sudo-make.co.uk/",
+  "homepage": "https://callum-jamesmith.com",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.14",
+    "grunt-php": "^3.0.0",
     "gulp": "^4.0.2",
+    "gulp-connect-php": "^1.0.3",
     "gulp-sass": "^4.1.0"
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
+    "gulp-autoprefixer": "^7.0.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
+  },
+  "bugs": {
+    "url": "https://github.com/sudo-make/Portfolio-Website/issues"
   }
 }
