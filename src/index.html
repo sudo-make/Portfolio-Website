@@ -42,23 +42,12 @@
   <!-- This css file overrides the defaults set by bootstrap -->
   <link rel="stylesheet" href="css/main.css" />
 
-  <!-- reCaptcha3 -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6Lf4YTcaAAAAACveZh4vo9iQU2OB1-PiWyCsX-cV"></script>
-  <script src="https://www.google.com/recaptcha/api.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
   <!-- Video Wallpaper -->
   <script src="https://www.gordonmac.com/wp-content/themes/2016/vendor/vide/jquery.vide.min.js"></script>
 </head>
 
 <body>
-  <?php
-  if (isset($_GET['contact'])) {
-    if ($_GET['contact'] == "success") {
-      echo ("<div class='alert alert-success'>Thanks for contacting</div>");
-    }
-  }
-  ?>
   <!-- Navigation bar/header -->
   <div class="container-fluid home-page">
     <header class="heropanel--video" data-vide-bg="mp4: ./video/Website_Background_Video.mp4, poster: ./images/video_poster.png" data-vide-options="posterType: png, loop: true, muted: true, position: 50% 50%">
@@ -75,9 +64,6 @@
             </li>
             <li class="nav-item navigation-links">
               <a href="#" class="nav-link" data-toggle="modal" data-target="#aboutModal">About me</a>
-            </li>
-            <li class="nav-item navigation-links">
-              <a href="#" class="nav-link" data-toggle="modal" data-target="#contactModal">Contact</a>
             </li>
           </ul>
           <script>
@@ -295,7 +281,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="aboutModalTitle">About Me</h5>
           <button type="button" class="close" data-dismiss="modal" tabindex="0" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+            <span style="color: black" aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
@@ -307,7 +293,7 @@
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title">Hey!</h5>
-                  <p class="card-text">3rd year student at the university of essex and game developer.</p>
+                  <p class="card-text">Game Developer and Msc student at Newcastle University.</p>
                   <p class="small">I also love dragons! <i class="fas fa-dragon"></i></p>
                 </div>
               </div>
@@ -317,7 +303,7 @@
               <div class="card-body">
                 <div class="tab-content" id="myTabContent">
                   <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
-                    My name is Callum-James Smith; I am a 3rd year student at the university of essex; studying computer science.
+                    My name is Callum-James Smith; I am a masters student at Newcastle University; studying Computer Game Engineering.
                     I make games, create websites, and mess around with linux.
                   </div>
                 </div>
@@ -325,50 +311,20 @@
             </div> <!-- End of Tabbed Pane Body -->
             <!-- C.V Download -->
             <button type="submit" class="btn btn-outline-info" onclick="window.open('https://docs.google.com/document/d/e/2PACX-1vTeBsoP5b7dVH8GO_JlLbKgrj0-iR3od015JFOtAfJOrl8_5Gre6IbRK3U9JjVkObbzd-7RjRrupS_K/pub')"><i class="far fa-file"></i> View my C.V</button>
+            <!-- View Email address -->
+            <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseEmail" aria-expanded="false" aria-controls="collapseEmail">
+              <i class="fas fa-envelope-open-text"></i> View Email Address
+            </button>
+            <div class="collapse" id="collapseEmail">
+              <div class="card card-body">
+                csmith99@protonmail.com
+              </div>
+            </div>
           </div> <!-- End of Tabbed Pane -->
         </div> <!-- End of Modal Body -->
       </div> <!-- End of Modal Content -->
     </div> <!-- End of Modal Dialog -->
   </div><!-- End of About Modal -->
-
-  <!-- Contact Modal -->
-  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Send me a message</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body" id="contact_body">
-          <div id="contact_results" class="alert-danger"></div>
-          <form id="contact_form" data-sitekey="6Lf4YTcaAAAAACveZh4vo9iQU2OB1-PiWyCsX-cV" data-callback='onSubmit' data-action='submit' method="post" action="contact.php">
-            <div class="form-group">
-              <label for="from-email" class="col-form-label">Your email:</label>
-              <input type="email" class="form-control" id="user_email" name="user_email" required="true">
-            </div>
-            <div class="form-group">
-              <label for="subject" class="col-form-label">Subject:</label>
-              <input type="text" class="form-control" id="subject" name="subject" required="true">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Message:</label>
-              <textarea class="form-control" id="message" name="message" required="true"></textarea>
-            </div>
-            <button type="submit" class="btn btn-outline-info">Send</button>
-            <input type="hidden" id="token" name="token">
-          </form>
-          <!-- Start jQuery code -->
-          <script>
-            function onSubmit(token) {
-              document.getElementById("contact_form").submit();
-            }
-          </script>
-        </div>
-      </div>
-    </div>
-  </div> <!-- End of Contact Modal -->
 
   <script src="js/jquery.min.js"></script>
   <script src="js/app.js"></script>
@@ -376,11 +332,6 @@
   <script src="js/bootstrap.min.js"></script> <!-- Bootstrap Javascript stuff, animations etc. -->
   <!-- Folder Effect -->
   <script src="js/folder_effect.js"></script>
-
-  <!-- Cool background effect -->
-  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
-  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
-  <script src="js/effect.js"></script>
 </body>
 
 </html>
